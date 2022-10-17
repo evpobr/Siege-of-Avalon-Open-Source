@@ -1,13 +1,15 @@
 {*****************************************************************************
  Digital Tome Game Design Utility
 
- Copyright �1999-2000 Digital Tome L.P. Texas USA
+ Copyright ©1999-2000 Digital Tome L.P. Texas USA
  Not for public release/use.
 
  // INSERT SHORT DESCRIPTION OF THIS UNIT HERE
 
 *****************************************************************************}
 unit MMTimer;
+
+{$MODE Delphi}
 
 interface
 
@@ -131,7 +133,7 @@ begin
     AniTimerThread.Terminate;
     SetEvent(OnTimerEventHandle);
     AniTimerThread := nil;
-    CloseHandle(OnTimerEventHandle);
+    FileClose(OnTimerEventHandle); { *Преобразовано из CloseHandle* }
     raise EAniTimer.Create('AniTimer creation error.');
   end;
 end;
@@ -159,7 +161,7 @@ begin
     AniTimerThread.Terminate;
     SetEvent(OnTimerEventHandle);
     AniTimerThread := nil;
-    CloseHandle(OnTimerEventHandle);
+    FileClose(OnTimerEventHandle); { *Преобразовано из CloseHandle* }
   end;
   TimerOn := NewOn;
 end;

@@ -1,11 +1,14 @@
 unit Merchant;
+
+{$MODE Delphi}
+
 {******************************************************************************}
 {                                                                              }
 {               Siege Of Avalon : Open Source Edition                          }
 {               -------------------------------------                          }
 {                                                                              }
 { Portions created by Digital Tome L.P. Texas USA are                          }
-{ Copyright ©1999-2000 Digital Tome L.P. Texas USA                             }
+{ Copyright Â©1999-2000 Digital Tome L.P. Texas USA                             }
 { All Rights Reserved.                                                         }
 {                                                                              }
 { Portions created by Team SOAOS are                                           }

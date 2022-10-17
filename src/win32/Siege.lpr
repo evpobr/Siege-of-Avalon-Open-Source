@@ -1,11 +1,14 @@
 program Siege;
+
+{$MODE Delphi}
+
 {******************************************************************************}
 {                                                                              }
 {               Siege Of Avalon : Open Source Edition                          }
 {               -------------------------------------                          }
 {                                                                              }
 { Portions created by Digital Tome L.P. Texas USA are                          }
-{ Copyright �1999-2000 Digital Tome L.P. Texas USA                             }
+{ Copyright ©1999-2000 Digital Tome L.P. Texas USA                             }
 { All Rights Reserved.                                                         }
 {                                                                              }
 { Portions created by Team SOAOS are                                           }
@@ -64,7 +67,7 @@ uses
   Windows,
   SysUtils,
   IniFiles,
-  Controls,
+  Controls, Interfaces,
   AniDemo in 'engine\AniDemo.pas' {frmMain},
   Loader in 'engine\Loader.pas',
   Resource in 'engine\Resource.pas',
@@ -126,7 +129,7 @@ uses
   Transit in 'interface\Transit.pas';
 
 
-{$R *.RES}
+{$R *.res}
 
 const
   MUTEXNAME = 'DigitalTomeSiegeOfAvalon';
@@ -209,7 +212,7 @@ begin
   hMutex := OpenMutex( MUTEX_ALL_ACCESS, False, MUTEXNAME );
   if hMutex <> 0 then
   begin
-    CloseHandle( hMutex );
+    FileClose(hMutex ); { *Преобразовано из CloseHandle* }
     Exit;
   end;
   hMutex := CreateMutex( nil, True, PChar( MUTEXNAME ) );
@@ -224,7 +227,7 @@ begin
   Application.Run;
 
   ReleaseMutex( hMutex );
-  CloseHandle( hMutex );
+  FileClose(hMutex ); { *Преобразовано из CloseHandle* }
 
   PlayClosingMovie;
 

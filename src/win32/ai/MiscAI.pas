@@ -1,11 +1,14 @@
 unit MiscAI;
+
+{$MODE Delphi}
+
 {******************************************************************************}
 {                                                                              }
 {               Siege Of Avalon : Open Source Edition                          }
 {               -------------------------------------                          }
 {                                                                              }
 { Portions created by Digital Tome L.P. Texas USA are                          }
-{ Copyright ©1999-2000 Digital Tome L.P. Texas USA                             }
+{ Copyright Â©1999-2000 Digital Tome L.P. Texas USA                             }
 { All Rights Reserved.                                                         }
 {                                                                              }
 { Portions created by Team SOAOS are                                           }
@@ -61,7 +64,7 @@ unit MiscAI;
 {*****************************************************************************}
 { Digital Tome Game Engine System                                             }
 {                                                                             }
-{ Copyright ©1999-2000 Digital Tome L.P. Texas USA as an unpublished work.    }
+{ Copyright Â©1999-2000 Digital Tome L.P. Texas USA as an unpublished work.    }
 { STRICTLY CONFIDENTIAL AND PROPRIETARY PRIVATE PROPERTY                      }
 { Not for public release/use.                                                 }
 {                                                                             }
@@ -91,7 +94,7 @@ uses
   Resource,
   Graphics,
   Math,
-  strfunctions;
+  strFunctions;
 
 type
   TIdleDuty = ( idStand, idMeander, idGuard, idbusy );
@@ -627,7 +630,7 @@ function GetFacing( SrcX, SrcY, TargetX, TargetY : Longint ) : Extended;
 
 implementation
 uses
-  anidemo,
+  AniDemo,
   BasicHumanoidAI;
 const
   PI = 3.1415926535;

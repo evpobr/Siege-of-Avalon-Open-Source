@@ -1,11 +1,14 @@
 unit LogFile;
+
+{$MODE Delphi}
+
 {******************************************************************************}
 {                                                                              }
 {               Siege Of Avalon : Open Source Edition                          }
 {               -------------------------------------                          }
 {                                                                              }
 { Portions created by Digital Tome L.P. Texas USA are                          }
-{ Copyright ©1999-2000 Digital Tome L.P. Texas USA                             }
+{ Copyright Â©1999-2000 Digital Tome L.P. Texas USA                             }
 { All Rights Reserved.                                                         }
 {                                                                              }
 { Portions created by Team SOAOS are                                           }
@@ -168,8 +171,8 @@ var
 begin
 
   S := ExtractFileName( Application.ExeName ) + #13#10
-    + 'Copyright ©1999-2000 Digital Tome L.P. Texas USA' + #13#10
-    + 'Portions Copyright ©1999-2000 Digital Tome, Inc. ' + #13#10
+    + 'Copyright Â©1999-2000 Digital Tome L.P. Texas USA' + #13#10
+    + 'Portions Copyright Â©1999-2000 Digital Tome, Inc. ' + #13#10
     + 'All Rights Reserved' + #13#10 + #13#10;
   Write( S[ 1 ], Length( S ) );
 

@@ -1,11 +1,14 @@
 unit BasicHumanoidAI;
+
+{$MODE Delphi}
+
 {******************************************************************************}
 {                                                                              }
 {               Siege Of Avalon : Open Source Edition                          }
 {               -------------------------------------                          }
 {                                                                              }
 { Portions created by Digital Tome L.P. Texas USA are                          }
-{ Copyright ©1999-2000 Digital Tome L.P. Texas USA                             }
+{ Copyright Â©1999-2000 Digital Tome L.P. Texas USA                             }
 { All Rights Reserved.                                                         }
 {                                                                              }
 { Portions created by Team SOAOS are                                           }
@@ -61,7 +64,7 @@ unit BasicHumanoidAI;
 {*****************************************************************************}
 { Digital Tome Game Engine System                                             }
 {                                                                             }
-{ Copyright ©1999-2000 Digital Tome L.P. Texas USA as an unpublished work.    }
+{ Copyright Â©1999-2000 Digital Tome L.P. Texas USA as an unpublished work.    }
 { STRICTLY CONFIDENTIAL AND PROPRIETARY PRIVATE PROPERTY                      }
 { Not for public release/use.                                                 }
 {                                                                             }
@@ -92,8 +95,8 @@ uses
   strFunctions,
   Resource,
   digifx,
-  anidemo,
-  spells1;
+  AniDemo,
+  Spells1;
 
 type
   TIdleDuty = ( idStand, idMeander, idGuard, idbusy, idConverse, idAction );
@@ -533,7 +536,7 @@ var
 
 implementation
 
-uses engine,
+uses Engine,
   LogFile,
   Effects,
   Spells;

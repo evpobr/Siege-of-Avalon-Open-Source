@@ -1,11 +1,14 @@
 unit AniDemo;
+
+{$MODE Delphi}
+
 {******************************************************************************}
 {                                                                              }
 {               Siege Of Avalon : Open Source Edition                          }
 {               -------------------------------------                          }
 {                                                                              }
 { Portions created by Digital Tome L.P. Texas USA are                          }
-{ Copyright ©1999-2000 Digital Tome L.P. Texas USA                             }
+{ Copyright Â©1999-2000 Digital Tome L.P. Texas USA                             }
 { All Rights Reserved.                                                         }
 {                                                                              }
 { Portions created by Team SOAOS are                                           }
@@ -92,7 +95,7 @@ uses
   Display,
   Inventory,
   Converse,
-  Gametext,
+  GameText,
   Statistics,
   ObjInventory,
   Map,
@@ -367,7 +370,7 @@ uses
   MousePtr,
   SaveFile;
 
-{$R *.DFM}
+{$R *.lfm}
 
 var
   DlgConverse : TConverseBox;
@@ -1713,7 +1716,7 @@ begin
  //  Player.AddTitle('Firefly');
  //  Player.Frozen:=false;
  //  ShowQuickMessage('EmHmImKmXmYm0123456789',8000);
- //  ShowQuickMessage('AÄOÖUÜBßaäoöuüO',8000);
+ //  ShowQuickMessage('AÐ”OÐ¦UÐ¬BÐ¯aÐ´oÑ†uÑŒO',8000);
  //  ShowQuickMessage('Ab Kb Lb Qb Rb Xb Yb',8000);
  //  ShowQuickMessage('m0m1m2m3m4m5m6m78m9m',8000);
  //  Player.Mysticism:=100;
