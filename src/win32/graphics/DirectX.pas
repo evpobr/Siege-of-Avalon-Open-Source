@@ -230,16 +230,16 @@ type
       ddckSrcColorkey: TDDColorKey;           // SrcColorkey override
       );
     1: (
-      lpDDSZBufferDest: IDirectDrawSurface;  // Surface to use as Z buffer for dest
+      lpDDSZBufferDest: Pointer;             // Surface to use as Z buffer for dest
       _union1b: DWORD;
-      lpDDSZBufferSrc: IDirectDrawSurface;   // Surface to use as Z buffer for src
+      lpDDSZBufferSrc: Pointer;              // Surface to use as Z buffer for src
       _union1d: DWORD;
       _union1e: DWORD;
       _union1f: DWORD;
       _union1g: DWORD;
-      lpDDSAlphaDest: IDirectDrawSurface;    // Surface to use as Alpha Channel
+      lpDDSAlphaDest: Pointer;               // Surface to use as Alpha Channel
       _union1i: DWORD;
-      lpDDSAlphaSrc: IDirectDrawSurface;     // Surface to use as Alpha Channel
+      lpDDSAlphaSrc: Pointer;                // Surface to use as Alpha Channel
       dwFillDepth: DWORD;                    // depth value for z-buffer
       );
     2: (
@@ -253,7 +253,7 @@ type
       _union2h: DWORD;
       _union2i: DWORD;
       _union2j: DWORD;
-      lpDDSPattern: IDirectDrawSurface;       // Surface to use as pattern
+      lpDDSPattern: Pointer;                  // Surface to use as pattern
       );
   end;
 
@@ -583,9 +583,9 @@ type
       dwFlags: DWORD;                      // flags
       );
     1: (
-      lpDDSAlphaDest: IDirectDrawSurface;  // Surface to use as alpha channel for dest
+      lpDDSAlphaDest: Pointer;             // Surface to use as alpha channel for dest
       _union1b: DWORD;
-      lpDDSAlphaSrc: IDirectDrawSurface;   // Surface to use as alpha channel for src
+      lpDDSAlphaSrc: Pointer;              // Surface to use as alpha channel for src
       );
   end;
 

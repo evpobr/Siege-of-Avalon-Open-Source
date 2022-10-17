@@ -1352,11 +1352,16 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov eax,dword ptr [offset _null]{}@@AxisX:
-      imul eax,$11{}        @@ByteCount: // Dest.BitCount div 8
-      mov edi,dword ptr [offset _null]{}@@AxisY:
-      imul edi,$11111111{}  @@Pitch: // Dest.pitch
-      add edi,$11111111{}   @@Bits:  // Dest.Bits
+      mov eax,dword ptr [offset _null]{}
+    @@AxisX:
+      imul eax,$11{}
+    @@ByteCount: // Dest.BitCount div 8
+      mov edi,dword ptr [offset _null]{}
+    @@AxisY:
+      imul edi,$11111111{}
+    @@Pitch: // Dest.pitch
+      add edi,$11111111{}
+    @@Bits:  // Dest.Bits
       add edi,eax
     @@EndCode:
       {$I DXRender.inc}
@@ -1412,13 +1417,19 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov edx,dword ptr [offset _null]{}@@AxisX:
-      imul edx,$11{}        @@ByteCount: // States.ZBuffer.BitCount div 8
-      mov eax,dword ptr [offset _null]{}@@AxisY:
-      imul eax,$11111111{}  @@Pitch: // States.ZBuffer.pitch
-      add eax,$11111111{}   @@Bits:  // States.ZBuffer.Bits
+      mov edx,dword ptr [offset _null]{}
+    @@AxisX:
+      imul edx,$11{}
+    @@ByteCount: // States.ZBuffer.BitCount div 8
+      mov eax,dword ptr [offset _null]{}
+    @@AxisY:
+      imul eax,$11111111{}
+    @@Pitch: // States.ZBuffer.pitch
+      add eax,$11111111{}
+    @@Bits:  // States.ZBuffer.Bits
       add eax,edx
-      mov dword ptr [offset _null],eax{}@@_ZBuf:
+      mov dword ptr [offset _null],eax{}
+    @@_ZBuf:
     @@EndCode:
       {$I DXRender.inc}
       {  @@AxisX  }
@@ -1472,8 +1483,10 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov edx,dword ptr [offset _null]{}@@_ZBuf:
-      mov ebx,dword ptr [offset _null]{}@@_RHW:
+      mov edx,dword ptr [offset _null]{}
+    @@_ZBuf:
+      mov ebx,dword ptr [offset _null]{}
+    @@_RHW:
     @@EndCode:
       {$I DXRender.inc}
       {  @@_ZBuf  }
@@ -1610,7 +1623,8 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      add dword ptr [offset _null],$11{}@@_ZBuf:
+      add dword ptr [offset _null],$11{}
+    @@_ZBuf:
     @@EndCode:
       {$I DXRender.inc}
       {  @@_ZBuf  }
@@ -1744,7 +1758,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        add edi,$11{}@@ByteCount:    // Dest.BitCount div 8;
+        add edi,$11{}
+      @@ByteCount:    // Dest.BitCount div 8;
       @@EndCode:
         {$I DXRender.inc}
         {  @@ByteCount  }
@@ -1767,12 +1782,15 @@ var
              mov esi,dword ptr [offset _null]{}//TexY
                                  @@TexY:
              shr esi,16
-             and esi,$11111111{} @@MaskY:   // Source.HeightMask
-             imul esi,$11111111{}@@Pitch:   // Source.pitch
+             and esi,$11111111{}
+           @@MaskY:   // Source.HeightMask
+             imul esi,$11111111{}
+           @@Pitch:   // Source.pitch
              mov edx,dword ptr [offset _null]{}//TexX
                                  @@TexX:
              shr edx,16
-             and edx,$11111111{} @@MaskX:   // Source.WidthMask
+             and edx,$11111111{}
+           @@MaskX:   // Source.WidthMask
              mov ebx,edx
              shr edx,3
              and ebx,7
@@ -1830,12 +1848,15 @@ var
              mov esi,dword ptr [offset _null]{}//TexY
                                  @@TexY:
              shr esi,16
-             and esi,$11111111{} @@MaskY:  // Source.HeightMask
-             imul esi,$11111111{}@@Pitch:  // Source.pitch
+             and esi,$11111111{}
+           @@MaskY:  // Source.HeightMask
+             imul esi,$11111111{}
+           @@Pitch:  // Source.pitch
              mov edx,dword ptr [offset _null]{}//TexX
                                  @@TexX:
              shr edx,16
-             and edx,$11111111{} @@MaskX:  // Source.WidthMask
+             and edx,$11111111{}
+           @@MaskX:  // Source.WidthMask
              mov ebx,edx
              shr edx,2
              and ebx,3
@@ -1892,12 +1913,15 @@ var
              mov esi,dword ptr [offset _null]{}//TexY
                                  @@TexY:
              shr esi,16
-             and esi,$11111111{} @@MaskY:  // Source.HeightMask
-             imul esi,$11111111{}@@Pitch:  // Source.pitch
+             and esi,$11111111{}
+           @@MaskY:  // Source.HeightMask
+             imul esi,$11111111{}
+           @@Pitch:  // Source.pitch
              mov edx,dword ptr [offset _null]{}//TexX
                                  @@TexX:
              shr edx,16
-             and edx,$11111111{} @@MaskX:  // Source.WidthMask
+             and edx,$11111111{}
+           @@MaskX:  // Source.WidthMask
              mov ebx,edx
              shr edx,1
              and ebx,1
@@ -1954,12 +1978,17 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
-               shr esi,$11{}       @@YShift: // 16-Source.PitchBit
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
+               shr esi,$11{}
+             @@YShift: // 16-Source.PitchBit
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask shl Source.PitchBit
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask shl Source.PitchBit
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
                movzx eax,byte ptr [$11111111+esi+edx]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -2013,12 +2042,17 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
-               shr esi,$11{}       @@YShift: // 16-Source.PitchBit
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
+               shr esi,$11{}
+             @@YShift: // 16-Source.PitchBit
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask shl Source.PitchBit
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask shl Source.PitchBit
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
                neg esi
                movzx eax,byte ptr [$11111111+esi+edx]
                                    @@Bits:   // Source.Bits
@@ -2073,13 +2107,18 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
-               imul esi,$11111111{}@@Pitch:  // Source.pitch
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
+               imul esi,$11111111{}
+             @@Pitch:  // Source.pitch
                movzx eax,byte ptr [esi+edx+$11111111]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -2129,12 +2168,17 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
-               shr esi,$11{}       @@YShift: // 16-Source.PitchBit
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
+               shr esi,$11{}
+             @@YShift: // 16-Source.PitchBit
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask shl Source.PitchBit
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask shl Source.PitchBit
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
                movzx eax,word ptr [$11111111+esi+edx*2]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -2188,12 +2232,17 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
-               shr esi,$11{}       @@YShift: // 16-Source.PitchBit
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
+               shr esi,$11{}
+             @@YShift: // 16-Source.PitchBit
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask shl Source.PitchBit
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask shl Source.PitchBit
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
                neg esi
                movzx eax,word ptr [$11111111+esi+edx*2]
                                    @@Bits:   // Source.Bits
@@ -2248,13 +2297,18 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
-               imul esi,$11111111{}@@Pitch:  // Source.pitch
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
+               imul esi,$11111111{}
+             @@Pitch:  // Source.pitch
                movzx eax,word ptr [esi+edx*2+$11111111]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -2308,9 +2362,12 @@ var
                                  @@TexX:
              shr esi,16
              shr edx,16
-             and esi,$11111111{} @@MaskY:  // Source.HeightMask
-             and edx,$11111111{} @@MaskX:  // Source.WidthMask
-             imul esi,$11111111{}@@Pitch:  // Source.pitch
+             and esi,$11111111{}
+           @@MaskY:  // Source.HeightMask
+             and edx,$11111111{}
+           @@MaskX:  // Source.WidthMask
+             imul esi,$11111111{}
+           @@Pitch:  // Source.pitch
              lea edx,[edx+edx*2+$11111111] // Source.Bits
                                  @@Bits:
              movzx eax,byte ptr [esi+edx+2]
@@ -2362,12 +2419,17 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
-               shr esi,$11{}       @@YShift: // 16-Source.PitchBit
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
+               shr esi,$11{}
+             @@YShift: // 16-Source.PitchBit
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask shl Source.PitchBit
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask shl Source.PitchBit
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
                mov eax,dword ptr [$11111111+esi+edx*4]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -2421,12 +2483,17 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
-               shr esi,$11{}       @@YShift: // 16-Source.PitchBit
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
+               shr esi,$11{}
+             @@YShift: // 16-Source.PitchBit
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask shl Source.PitchBit
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask shl Source.PitchBit
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
                neg esi
                mov eax,dword ptr [$11111111+esi+edx*4]
                                    @@Bits:   // Source.Bits
@@ -2481,13 +2548,18 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               and esi,$11111111{} @@MaskY:  // Source.HeightMask
-               and edx,$11111111{} @@MaskX:  // Source.WidthMask
-               imul esi,$11111111{}@@Pitch:  // Source.pitch
+               and esi,$11111111{}
+             @@MaskY:  // Source.HeightMask
+               and edx,$11111111{}
+             @@MaskX:  // Source.WidthMask
+               imul esi,$11111111{}
+             @@Pitch:  // Source.pitch
                mov eax,dword ptr [esi+edx*4+$11111111]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -2544,7 +2616,8 @@ var
              mov esi,dword ptr [offset _null]{}//TexY
                                  @@TexY:
              shr esi,16
-             imul esi,$11111111{}@@Pitch:   // Source.pitch
+             imul esi,$11111111{}
+           @@Pitch:   // Source.pitch
              mov edx,dword ptr [offset _null]{}//TexX
                                  @@TexX:
              shr edx,16
@@ -2593,7 +2666,8 @@ var
              mov esi,dword ptr [offset _null]{}//TexY
                                  @@TexY:
              shr esi,16
-             imul esi,$11111111{}@@Pitch:  // Source.pitch
+             imul esi,$11111111{}
+           @@Pitch:  // Source.pitch
              mov edx,dword ptr [offset _null]{}//TexX
                                  @@TexX:
              shr edx,16
@@ -2642,7 +2716,8 @@ var
              mov esi,dword ptr [offset _null]{}//TexY
                                  @@TexY:
              shr esi,16
-             imul esi,$11111111{}@@Pitch:  // Source.pitch
+             imul esi,$11111111{}
+           @@Pitch:  // Source.pitch
              mov edx,dword ptr [offset _null]{}//TexX
                                  @@TexX:
              shr edx,16
@@ -2690,11 +2765,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               shl esi,$11{}       @@PitchBit: // Source.PitchBit
+               shl esi,$11{}
+             @@PitchBit: // Source.PitchBit
                movzx eax,byte ptr [$11111111+esi+edx]
                                    @@Bits:     // Source.Bits
              @@EndCode:
@@ -2729,11 +2807,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               shl esi,$11{}       @@PitchBit: // Source.PitchBit
+               shl esi,$11{}
+             @@PitchBit: // Source.PitchBit
                neg esi
                movzx eax,byte ptr [$11111111+esi+edx]
                                    @@Bits:     // Source.Bits
@@ -2769,11 +2850,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               imul esi,$11111111{}@@Pitch:  // Source.pitch
+               imul esi,$11111111{}
+             @@Pitch:  // Source.pitch
                movzx eax,byte ptr [esi+edx+$11111111]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -2811,11 +2895,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               shl esi,$11{}       @@PitchBit: // Source.PitchBit
+               shl esi,$11{}
+             @@PitchBit: // Source.PitchBit
                movzx eax,word ptr [$11111111+esi+edx*2]
                                    @@Bits:     // Source.Bits
              @@EndCode:
@@ -2850,11 +2937,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               shl esi,$11{}       @@PitchBit: // Source.PitchBit
+               shl esi,$11{}
+             @@PitchBit: // Source.PitchBit
                neg esi
                movzx eax,word ptr [$11111111+esi+edx*2]
                                    @@Bits:     // Source.Bits
@@ -2890,11 +2980,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               imul esi,$11111111{}@@Pitch:  // Source.pitch
+               imul esi,$11111111{}
+             @@Pitch:  // Source.pitch
                movzx eax,word ptr [esi+edx*2+$11111111]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -2936,7 +3029,8 @@ var
                                  @@TexX:
              shr esi,16
              shr edx,16
-             imul esi,$11111111{}@@Pitch:  // Source.pitch
+             imul esi,$11111111{}
+           @@Pitch:  // Source.pitch
              lea edx,[edx+edx*2+$11111111] // Source.Bits
                                  @@Bits:
              movzx eax,byte ptr [esi+edx+2]
@@ -2976,11 +3070,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               shl esi,$11{}       @@PitchBit: // Source.PitchBit
+               shl esi,$11{}
+             @@PitchBit: // Source.PitchBit
                mov eax,dword ptr [$11111111+esi+edx*4]
                                    @@Bits:     // Source.Bits
              @@EndCode:
@@ -3015,11 +3112,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               shl esi,$11{}       @@PitchBit: // Source.PitchBit
+               shl esi,$11{}
+             @@PitchBit: // Source.PitchBit
                neg esi
                mov eax,dword ptr [$11111111+esi+edx*4]
                                    @@Bits:     // Source.Bits
@@ -3055,11 +3155,14 @@ var
             asm
                jmp @@EndCode
              @@StartCode:
-               mov esi,dword ptr [offset _null]{}@@TexY: //TexY
-               mov edx,dword ptr [offset _null]{}@@TexX: //TexX
+               mov esi,dword ptr [offset _null]{}
+             @@TexY: //TexY
+               mov edx,dword ptr [offset _null]{}
+             @@TexX: //TexX
                shr esi,16
                shr edx,16
-               imul esi,$11111111{}@@Pitch:  // Source.pitch
+               imul esi,$11111111{}
+             @@Pitch:  // Source.pitch
                mov eax,dword ptr [esi+edx*4+$11111111]
                                    @@Bits:   // Source.Bits
              @@EndCode:
@@ -3131,10 +3234,13 @@ var
               mov edx,dword ptr [eax*4+$11111111]
                                   {}@@idx_indexPal:// @Surface.idx_palette
 
-              mov byte ptr [offset _null],dl{}@@DestR:// @Dest.R
-              mov byte ptr [offset _null],dh{}@@DestG:// @Dest.G
+              mov byte ptr [offset _null],dl{}
+            @@DestR:// @Dest.R
+              mov byte ptr [offset _null],dh{}
+            @@DestG:// @Dest.G
               bswap edx
-              mov byte ptr [offset _null],dh{}@@DestB:// @Dest.B
+              mov byte ptr [offset _null],dh{}
+            @@DestB:// @Dest.B
             @@EndCode:
               {$I DXRender.inc}
               {  @@idx_indexPal  }
@@ -3169,15 +3275,20 @@ var
             @@StartCode:
               {  Index channel  }
               mov edx,eax
-              and edx,$11111111{}@@idx_indexMask:   // Surface.idx_index.Mask
-              shr edx,$11      {}@@idx_indexRShift: // Surface.idx_index.rshift
+              and edx,$11111111{}
+            @@idx_indexMask:   // Surface.idx_index.Mask
+              shr edx,$11      {}
+            @@idx_indexRShift: // Surface.idx_index.rshift
               mov edx,dword ptr [edx*4+$11111111]
                                {}@@idx_indexPal:    // @Surface.idx_palette
 
-              mov byte ptr [offset _null],dl{}@@DestR:// @Dest.R
-              mov byte ptr [offset _null],dh{}@@DestG:// @Dest.G
+              mov byte ptr [offset _null],dl{}
+            @@DestR:// @Dest.R
+              mov byte ptr [offset _null],dh{}
+            @@DestG:// @Dest.G
               bswap edx
-              mov byte ptr [offset _null],dh{}@@DestB:// @Dest.B
+              mov byte ptr [offset _null],dh{}
+            @@DestB:// @Dest.B
             @@EndCode:
               {$I DXRender.inc}
               {  @@idx_indexMask  }
@@ -3224,15 +3335,20 @@ var
             @@StartCode:
               {  Index channel  }
               mov edx,eax
-              and edx,$11111111{}@@idx_indexMask:   // Surface.idx_index.Mask
-              shl edx,$11      {}@@idx_indexLShift: // Surface.idx_index.lshift
+              and edx,$11111111{}
+            @@idx_indexMask:   // Surface.idx_index.Mask
+              shl edx,$11      {}
+            @@idx_indexLShift: // Surface.idx_index.lshift
               mov edx,dword ptr [edx*4+$11111111]
                                {}@@idx_indexPal:    // @Surface.idx_palette
 
-              mov byte ptr [offset _null],dl{}@@DestR:// @Dest.R
-              mov byte ptr [offset _null],dh{}@@DestG:// @Dest.G
+              mov byte ptr [offset _null],dl{}
+            @@DestR:// @Dest.R
+              mov byte ptr [offset _null],dh{}
+            @@DestG:// @Dest.G
               bswap edx
-              mov byte ptr [offset _null],dh{}@@DestB:// @Dest.B
+              mov byte ptr [offset _null],dh{}
+            @@DestB:// @Dest.B
             @@EndCode:
               {$I DXRender.inc}
               {  @@idx_indexMask  }
@@ -3278,9 +3394,12 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov word ptr [offset _null],$1111{}@@DestR:// @Dest.R
-            mov word ptr [offset _null],$1111{}@@DestG:// @Dest.G
-            mov word ptr [offset _null],$1111{}@@DestB:// @Dest.B
+            mov word ptr [offset _null],$1111{}
+          @@DestR:// @Dest.R
+            mov word ptr [offset _null],$1111{}
+          @@DestG:// @Dest.G
+            mov word ptr [offset _null],$1111{}
+          @@DestB:// @Dest.B
           @@EndCode:
             {$I DXRender.inc}
             {  @@DestR  }
@@ -3330,9 +3449,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@idx_alphaMask:   // Surface.idx_alpha.Mask
-              shr edx,$11      {}@@idx_alphaRShift: // Surface.idx_alpha.rshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.A
+              and edx,$11111111{}
+            @@idx_alphaMask:   // Surface.idx_alpha.Mask
+              shr edx,$11      {}
+            @@idx_alphaRShift: // Surface.idx_alpha.rshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.A
             @@EndCode:
               {$I DXRender.inc}
               {  @@idx_alphaMask  }
@@ -3360,9 +3482,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@idx_alphaMask:   // Surface.idx_alpha.Mask
-              shl edx,$11      {}@@idx_alphaLShift: // Surface.idx_alpha.lshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.A
+              and edx,$11111111{}
+            @@idx_alphaMask:   // Surface.idx_alpha.Mask
+              shl edx,$11      {}
+            @@idx_alphaLShift: // Surface.idx_alpha.lshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.A
             @@EndCode:
               {$I DXRender.inc}
               {  @@idx_alphaMask  }
@@ -3390,7 +3515,8 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov word ptr [offset _null],$1111{}@@Dest:// @Dest.A
+            mov word ptr [offset _null],$1111{}
+          @@Dest:// @Dest.A
           @@EndCode:
             {$I DXRender.inc}
             {  @@Dest  }
@@ -3420,9 +3546,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@Mask:    // Surface.rgb_red.Mask
-              shr edx,$11      {}@@RShift:  // Surface.rgb_red.rshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.R
+              and edx,$11111111{}
+            @@Mask:    // Surface.rgb_red.Mask
+              shr edx,$11      {}
+            @@RShift:  // Surface.rgb_red.rshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.R
             @@EndCode:
               {$I DXRender.inc}
               {  @@Mask  }
@@ -3450,9 +3579,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@Mask:    // Surface.rgb_red.Mask
-              shl edx,$11      {}@@LShift:  // Surface.rgb_red.lshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.R
+              and edx,$11111111{}
+            @@Mask:    // Surface.rgb_red.Mask
+              shl edx,$11      {}
+            @@LShift:  // Surface.rgb_red.lshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.R
             @@EndCode:
               {$I DXRender.inc}
               {  @@Mask  }
@@ -3480,7 +3612,8 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov word ptr [offset _null],$1111{}@@Dest:// @Dest.R
+            mov word ptr [offset _null],$1111{}
+          @@Dest:// @Dest.R
           @@EndCode:
             {$I DXRender.inc}
             {  @@Dest  }
@@ -3508,9 +3641,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@Mask:    // Surface.rgb_green.Mask
-              shr edx,$11      {}@@RShift:  // Surface.rgb_green.rshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.G
+              and edx,$11111111{}
+            @@Mask:    // Surface.rgb_green.Mask
+              shr edx,$11      {}
+            @@RShift:  // Surface.rgb_green.rshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.G
             @@EndCode:
               {$I DXRender.inc}
               {  @@Mask  }
@@ -3538,9 +3674,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@Mask:    // Surface.rgb_green.Mask
-              shl edx,$11      {}@@LShift:  // Surface.rgb_green.lshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.G
+              and edx,$11111111{}
+            @@Mask:    // Surface.rgb_green.Mask
+              shl edx,$11      {}
+            @@LShift:  // Surface.rgb_green.lshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.G
             @@EndCode:
               {$I DXRender.inc}
               {  @@Mask  }
@@ -3568,7 +3707,8 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov word ptr [offset _null],$1111{}@@Dest:// @Dest.G
+            mov word ptr [offset _null],$1111{}
+          @@Dest:// @Dest.G
           @@EndCode:
             {$I DXRender.inc}
             {  @@Dest  }
@@ -3596,9 +3736,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@Mask:    // Surface.rgb_blue.Mask
-              shr edx,$11      {}@@RShift:  // Surface.rgb_blue.rshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.B
+              and edx,$11111111{}
+            @@Mask:    // Surface.rgb_blue.Mask
+              shr edx,$11      {}
+            @@RShift:  // Surface.rgb_blue.rshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.B
             @@EndCode:
               {$I DXRender.inc}
               {  @@Mask  }
@@ -3626,9 +3769,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@Mask:    // Surface.rgb_blue.Mask
-              shl edx,$11      {}@@LShift:  // Surface.rgb_blue.lshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.B
+              and edx,$11111111{}
+            @@Mask:    // Surface.rgb_blue.Mask
+              shl edx,$11      {}
+            @@LShift:  // Surface.rgb_blue.lshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.B
             @@EndCode:
               {$I DXRender.inc}
               {  @@Mask  }
@@ -3656,7 +3802,8 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov word ptr [offset _null],$1111{}@@Dest:// @Dest.B
+            mov word ptr [offset _null],$1111{}
+          @@Dest:// @Dest.B
           @@EndCode:
             {$I DXRender.inc}
             {  @@Dest  }
@@ -3684,9 +3831,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@Mask:    // Surface.rgb_alpha.Mask
-              shr edx,$11      {}@@RShift:  // Surface.rgb_alpha.rshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.A
+              and edx,$11111111{}
+            @@Mask:    // Surface.rgb_alpha.Mask
+              shr edx,$11      {}
+            @@RShift:  // Surface.rgb_alpha.rshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.A
             @@EndCode:
               {$I DXRender.inc}
               {  @@Mask  }
@@ -3714,9 +3864,12 @@ var
               jmp @@EndCode
             @@StartCode:
               mov edx,eax
-              and edx,$11111111{}@@Mask:    // Surface.rgb_alpha.Mask
-              shl edx,$11      {}@@LShift:  // Surface.rgb_alpha.lshift
-              mov byte ptr [offset _null],dl{}@@Dest:// @Dest.A
+              and edx,$11111111{}
+            @@Mask:    // Surface.rgb_alpha.Mask
+              shl edx,$11      {}
+            @@LShift:  // Surface.rgb_alpha.lshift
+              mov byte ptr [offset _null],dl{}
+            @@Dest:// @Dest.A
             @@EndCode:
               {$I DXRender.inc}
               {  @@Mask  }
@@ -3744,7 +3897,8 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov word ptr [offset _null],$1111{}@@Dest:// @Dest.A
+            mov word ptr [offset _null],$1111{}
+          @@Dest:// @Dest.A
           @@EndCode:
             {$I DXRender.inc}
             {  @@Dest  }
@@ -3781,9 +3935,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx edx,byte ptr [offset _null]{}@@Src:// @Src.R
-          shl edx,$11      {}@@rgb_redRShift:  // Surface.rgb_red.rshift
-          and edx,$11111111{}@@rgb_redMask:    // Surface.rgb_red.Mask
+          movzx edx,byte ptr [offset _null]{}
+        @@Src:// @Src.R
+          shl edx,$11      {}
+        @@rgb_redRShift:  // Surface.rgb_red.rshift
+          and edx,$11111111{}
+        @@rgb_redMask:    // Surface.rgb_red.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -3811,9 +3968,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx edx,byte ptr [offset _null]{}@@Src:// @Src.R
-          shr edx,$11      {}@@rgb_redLShift:  // Surface.rgb_red.lshift
-          and edx,$11111111{}@@rgb_redMask:    // Surface.rgb_red.Mask
+          movzx edx,byte ptr [offset _null]{}
+        @@Src:// @Src.R
+          shr edx,$11      {}
+        @@rgb_redLShift:  // Surface.rgb_red.lshift
+          and edx,$11111111{}
+        @@rgb_redMask:    // Surface.rgb_red.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -3846,9 +4006,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx edx,byte ptr [offset _null]{}@@Src:// @Src.G
-          shl edx,$11      {}@@rgb_greenRShift:  // Surface.rgb_green.rshift
-          and edx,$11111111{}@@rgb_greenMask:    // Surface.rgb_green.Mask
+          movzx edx,byte ptr [offset _null]{}
+        @@Src:// @Src.G
+          shl edx,$11      {}
+        @@rgb_greenRShift:  // Surface.rgb_green.rshift
+          and edx,$11111111{}
+        @@rgb_greenMask:    // Surface.rgb_green.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -3876,9 +4039,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx edx,byte ptr [offset _null]{}@@Src:// @Src.G
-          shr edx,$11      {}@@rgb_greenLShift:  // Surface.rgb_green.lshift
-          and edx,$11111111{}@@rgb_greenMask:    // Surface.rgb_green.Mask
+          movzx edx,byte ptr [offset _null]{}
+        @@Src:// @Src.G
+          shr edx,$11      {}
+        @@rgb_greenLShift:  // Surface.rgb_green.lshift
+          and edx,$11111111{}
+        @@rgb_greenMask:    // Surface.rgb_green.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -3911,9 +4077,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx edx,byte ptr [offset _null]{}@@Src:// @Src.B
-          shl edx,$11      {}@@rgb_blueRShift:  // Surface.rgb_blue.rshift
-          and edx,$11111111{}@@rgb_blueMask:    // Surface.rgb_blue.Mask
+          movzx edx,byte ptr [offset _null]{}
+        @@Src:// @Src.B
+          shl edx,$11      {}
+        @@rgb_blueRShift:  // Surface.rgb_blue.rshift
+          and edx,$11111111{}
+        @@rgb_blueMask:    // Surface.rgb_blue.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -3941,9 +4110,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx edx,byte ptr [offset _null]{}@@Src:// @Src.B
-          shr edx,$11      {}@@rgb_blueLShift:  // Surface.rgb_blue.lshift
-          and edx,$11111111{}@@rgb_blueMask:    // Surface.rgb_blue.Mask
+          movzx edx,byte ptr [offset _null]{}
+        @@Src:// @Src.B
+          shr edx,$11      {}
+        @@rgb_blueLShift:  // Surface.rgb_blue.lshift
+          and edx,$11111111{}
+        @@rgb_blueMask:    // Surface.rgb_blue.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -3976,9 +4148,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx edx,byte ptr [offset _null]{}@@Src:// @Src.A
-          shl edx,$11      {}@@rgb_alphaRShift: // Surface.rgb_alpha.rshift
-          and edx,$11111111{}@@rgb_alphaMask:   // Surface.rgb_alpha.Mask
+          movzx edx,byte ptr [offset _null]{}
+        @@Src:// @Src.A
+          shl edx,$11      {}
+        @@rgb_alphaRShift: // Surface.rgb_alpha.rshift
+          and edx,$11111111{}
+        @@rgb_alphaMask:   // Surface.rgb_alpha.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4006,9 +4181,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx edx,byte ptr [offset _null]{}@@Src:// @Src.A
-          shr edx,$11      {}@@rgb_alphaLShift: // Surface.rgb_alpha.lshift
-          and edx,$11111111{}@@rgb_alphaMask:   // Surface.rgb_alpha.Mask
+          movzx edx,byte ptr [offset _null]{}
+        @@Src:// @Src.A
+          shr edx,$11      {}
+        @@rgb_alphaLShift: // Surface.rgb_alpha.lshift
+          and edx,$11111111{}
+        @@rgb_alphaMask:   // Surface.rgb_alpha.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4043,8 +4221,10 @@ var
       jmp @@EndCode
     @@StartCode:
       xor eax,eax
-      movzx ebp,byte ptr [offset _null]{}@@AxisX:
-      movzx edx,byte ptr [offset _null]{}@@AxisY:
+      movzx ebp,byte ptr [offset _null]{}
+    @@AxisX:
+      movzx edx,byte ptr [offset _null]{}
+    @@AxisY:
       and ebp,1
       and edx,1
       lea ebp,[offset m+ebp*2+edx]
@@ -4069,7 +4249,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx edx,byte ptr [offset _null]{}@@Src:// @Src.R
+        movzx edx,byte ptr [offset _null]{}
+      @@Src:// @Src.R
       @@EndCode:
         {$I DXRender.inc}
         {  @@Src  }
@@ -4085,10 +4266,12 @@ var
           jmp @@EndCode
         @@StartCode:
           mov ebx,edx
-          shr ebx,$11       {}@@BitCount:  // 6-bitcount
+          shr ebx,$11       {}
+        @@BitCount:  // 6-bitcount
           and ebx,3
           movzx ebx,byte ptr [ebp+ebx*4]
-          shl ebx,$11       {}@@BitCount2: // 8-bitcount
+          shl ebx,$11       {}
+        @@BitCount2: // 8-bitcount
           movzx edx,byte [offset _AddTable+edx+ebx]
         @@EndCode:
           {$I DXRender.inc}
@@ -4111,8 +4294,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          shl edx,$11      {}@@rgb_redRShift:  // Surface.rgb_red.rshift
-          and edx,$11111111{}@@rgb_redMask:    // Surface.rgb_red.Mask
+          shl edx,$11      {}
+        @@rgb_redRShift:  // Surface.rgb_red.rshift
+          and edx,$11111111{}
+        @@rgb_redMask:    // Surface.rgb_red.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4134,8 +4319,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          shr edx,$11      {}@@rgb_redLShift:  // Surface.rgb_red.lshift
-          and edx,$11111111{}@@rgb_redMask:    // Surface.rgb_red.Mask
+          shr edx,$11      {}
+        @@rgb_redLShift:  // Surface.rgb_red.lshift
+          and edx,$11111111{}
+        @@rgb_redMask:    // Surface.rgb_red.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4160,7 +4347,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx edx,byte ptr [offset _null]{}@@Src:// @Src.G
+        movzx edx,byte ptr [offset _null]{}
+      @@Src:// @Src.G
       @@EndCode:
         {$I DXRender.inc}
         {  @@Src  }
@@ -4176,10 +4364,12 @@ var
           jmp @@EndCode
         @@StartCode:
           mov ebx,edx
-          shr ebx,$11       {}@@BitCount:  // 6-bitcount
+          shr ebx,$11       {}
+        @@BitCount:  // 6-bitcount
           and ebx,3
           movzx ebx,byte ptr [ebp+ebx*4]
-          shl ebx,$11       {}@@BitCount2: // 8-bitcount
+          shl ebx,$11       {}
+        @@BitCount2: // 8-bitcount
           movzx edx,byte [offset _AddTable+edx+ebx]
         @@EndCode:
           {$I DXRender.inc}
@@ -4202,8 +4392,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          shl edx,$11      {}@@rgb_greenRShift:  // Surface.rgb_green.rshift
-          and edx,$11111111{}@@rgb_greenMask:    // Surface.rgb_green.Mask
+          shl edx,$11      {}
+        @@rgb_greenRShift:  // Surface.rgb_green.rshift
+          and edx,$11111111{}
+        @@rgb_greenMask:    // Surface.rgb_green.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4225,8 +4417,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          shr edx,$11      {}@@rgb_greenLShift:  // Surface.rgb_green.lshift
-          and edx,$11111111{}@@rgb_greenMask:    // Surface.rgb_green.Mask
+          shr edx,$11      {}
+        @@rgb_greenLShift:  // Surface.rgb_green.lshift
+          and edx,$11111111{}
+        @@rgb_greenMask:    // Surface.rgb_green.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4251,7 +4445,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx edx,byte ptr [offset _null]{}@@Src:// @Src.B
+        movzx edx,byte ptr [offset _null]{}
+      @@Src:// @Src.B
       @@EndCode:
         {$I DXRender.inc}
         {  @@Src  }
@@ -4267,10 +4462,12 @@ var
           jmp @@EndCode
         @@StartCode:
           mov ebx,edx
-          shr ebx,$11       {}@@BitCount:  // 6-bitcount
+          shr ebx,$11       {}
+        @@BitCount:  // 6-bitcount
           and ebx,3
           movzx ebx,byte ptr [ebp+ebx*4]
-          shl ebx,$11       {}@@BitCount2: // 8-bitcount
+          shl ebx,$11       {}
+        @@BitCount2: // 8-bitcount
           movzx edx,byte [offset _AddTable+edx+ebx]
         @@EndCode:
           {$I DXRender.inc}
@@ -4293,8 +4490,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          shl edx,$11      {}@@rgb_blueRShift:  // Surface.rgb_blue.rshift
-          and edx,$11111111{}@@rgb_blueMask:    // Surface.rgb_blue.Mask
+          shl edx,$11      {}
+        @@rgb_blueRShift:  // Surface.rgb_blue.rshift
+          and edx,$11111111{}
+        @@rgb_blueMask:    // Surface.rgb_blue.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4316,8 +4515,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          shr edx,$11      {}@@rgb_blueLShift:  // Surface.rgb_blue.lshift
-          and edx,$11111111{}@@rgb_blueMask:    // Surface.rgb_blue.Mask
+          shr edx,$11      {}
+        @@rgb_blueLShift:  // Surface.rgb_blue.lshift
+          and edx,$11111111{}
+        @@rgb_blueMask:    // Surface.rgb_blue.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4342,7 +4543,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx edx,byte ptr [offset _null]{}@@Src:// @Src.R
+        movzx edx,byte ptr [offset _null]{}
+      @@Src:// @Src.R
       @@EndCode:
         {$I DXRender.inc}
         {  @@Src  }
@@ -4358,10 +4560,12 @@ var
           jmp @@EndCode
         @@StartCode:
           mov ebx,edx
-          shr ebx,$11       {}@@BitCount:  // 6-bitcount
+          shr ebx,$11       {}
+        @@BitCount:  // 6-bitcount
           and ebx,3
           movzx ebx,byte ptr [ebp+ebx]
-          shl ebx,$11       {}@@BitCount2: // 8-bitcount
+          shl ebx,$11       {}
+        @@BitCount2: // 8-bitcount
           movzx edx,byte [offset _AddTable+edx+ebx]
         @@EndCode:
           {$I DXRender.inc}
@@ -4384,8 +4588,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          shl edx,$11      {}@@rgb_alphaRShift:  // Surface.rgb_alpha.rshift
-          and edx,$11111111{}@@rgb_alphaMask:    // Surface.rgb_alpha.Mask
+          shl edx,$11      {}
+        @@rgb_alphaRShift:  // Surface.rgb_alpha.rshift
+          and edx,$11111111{}
+        @@rgb_alphaMask:    // Surface.rgb_alpha.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4407,8 +4613,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          shr edx,$11      {}@@rgb_alphaLShift:  // Surface.rgb_alpha.lshift
-          and edx,$11111111{}@@rgb_alphaMask:    // Surface.rgb_alpha.Mask
+          shr edx,$11      {}
+        @@rgb_alphaLShift:  // Surface.rgb_alpha.lshift
+          and edx,$11111111{}
+        @@rgb_alphaMask:    // Surface.rgb_alpha.Mask
           or eax,edx
         @@EndCode:
           {$I DXRender.inc}
@@ -4475,7 +4683,8 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          cmp eax,$11111111{}@@TransColor: // Process.Texture.TransparentColor
+          cmp eax,$11111111{}
+        @@TransColor: // Process.Texture.TransparentColor
         @@EndCode:
           {$I DXRender.inc}
           {  @@TransColor  }
@@ -4492,8 +4701,10 @@ var
         jmp @@EndCode
       @@StartCode:
         mov edx,eax
-        and edx,$11111111{}@@TransMask:  // TransparentMask
-        cmp edx,$11111111{}@@TransColor: // Process.Texture.TransparentColor
+        and edx,$11111111{}
+      @@TransMask:  // TransparentMask
+        cmp edx,$11111111{}
+      @@TransColor: // Process.Texture.TransparentColor
       @@EndCode:
         {$I DXRender.inc}
         {  @@TransMask  }
@@ -4546,11 +4757,15 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov eax,dword ptr [offset _null]{}@@TexX:
-      mov edx,dword ptr [offset _null]{}@@TexY:
+      mov eax,dword ptr [offset _null]{}
+    @@TexX:
+      mov edx,dword ptr [offset _null]{}
+    @@TexY:
       add eax,65536
-      mov dword ptr [offset _null],edx{}@@AxisY:
-      mov dword ptr [offset _null],eax{}@@AxisX:
+      mov dword ptr [offset _null],edx{}
+    @@AxisY:
+      mov dword ptr [offset _null],eax{}
+    @@AxisX:
     @@EndCode:
       {$I DXRender.inc}
       {  @@TexX  }
@@ -4583,7 +4798,8 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      add dword ptr [offset _null],65536{}@@AxisY:
+      add dword ptr [offset _null],65536{}
+    @@AxisY:
     @@EndCode:
       {$I DXRender.inc}
       {  @@AxisY  }
@@ -4598,7 +4814,8 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      sub dword ptr [offset _null],65536{}@@AxisX:
+      sub dword ptr [offset _null],65536{}
+    @@AxisX:
     @@EndCode:
       {$I DXRender.inc}
       {  @@AxisX  }
@@ -4730,30 +4947,37 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@_BiLinearCol2:
-          movzx edx,byte ptr [offset _null]{}@@TexX:
+          movzx eax,byte ptr [offset _null]{}
+        @@_BiLinearCol2:
+          movzx edx,byte ptr [offset _null]{}
+        @@TexX:
           imul eax,edx
-          movzx ebx,byte ptr [offset _null]{}@@_BiLinearCol1:
+          movzx ebx,byte ptr [offset _null]{}
+        @@_BiLinearCol1:
           xor edx,$FF
           imul ebx,edx
           add ebx,eax
           xor edx,$FF
 
-          movzx eax,byte ptr [offset _null]{}@@_BiLinearCol4:
+          movzx eax,byte ptr [offset _null]{}
+        @@_BiLinearCol4:
           imul eax,edx
-          movzx ebp,byte ptr [offset _null]{}@@_BiLinearCol3:
+          movzx ebp,byte ptr [offset _null]{}
+        @@_BiLinearCol3:
           xor edx,$FF
           imul ebp,edx
           add eax,ebp
 
-          movzx edx,byte ptr [offset _Null]{}@@TexY:
+          movzx edx,byte ptr [offset _Null]{}
+        @@TexY:
           imul eax,edx
           xor edx,$FF
           imul ebx,edx
           add eax,ebx
           shr eax,16
 
-          mov byte ptr [offset _Null],al{}@@Dest:
+          mov byte ptr [offset _Null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@_BiLinearCol1  }
@@ -4806,30 +5030,37 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@_BiLinearCol2:
-          movzx edx,byte ptr [offset _null]{}@@TexX:
+          movzx eax,byte ptr [offset _null]{}
+        @@_BiLinearCol2:
+          movzx edx,byte ptr [offset _null]{}
+        @@TexX:
           imul eax,edx
-          movzx ebx,byte ptr [offset _null]{}@@_BiLinearCol1:
+          movzx ebx,byte ptr [offset _null]{}
+        @@_BiLinearCol1:
           xor edx,$FF
           imul ebx,edx
           add ebx,eax
           xor edx,$FF
 
-          movzx eax,byte ptr [offset _null]{}@@_BiLinearCol4:
+          movzx eax,byte ptr [offset _null]{}
+        @@_BiLinearCol4:
           imul eax,edx
-          movzx ebp,byte ptr [offset _null]{}@@_BiLinearCol3:
+          movzx ebp,byte ptr [offset _null]{}
+        @@_BiLinearCol3:
           xor edx,$FF
           imul ebp,edx
           add eax,ebp
 
-          movzx edx,byte ptr [offset _Null]{}@@TexY:
+          movzx edx,byte ptr [offset _Null]{}
+        @@TexY:
           imul eax,edx
           xor edx,$FF
           imul ebx,edx
           add eax,ebx
           shr eax,16
 
-          mov byte ptr [offset _Null],al{}@@Dest:
+          mov byte ptr [offset _Null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@_BiLinearCol1  }
@@ -4882,30 +5113,37 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@_BiLinearCol2:
-          movzx edx,byte ptr [offset _null]{}@@TexX:
+          movzx eax,byte ptr [offset _null]{}
+        @@_BiLinearCol2:
+          movzx edx,byte ptr [offset _null]{}
+        @@TexX:
           imul eax,edx
-          movzx ebx,byte ptr [offset _null]{}@@_BiLinearCol1:
+          movzx ebx,byte ptr [offset _null]{}
+        @@_BiLinearCol1:
           xor edx,$FF
           imul ebx,edx
           add ebx,eax
           xor edx,$FF
 
-          movzx eax,byte ptr [offset _null]{}@@_BiLinearCol4:
+          movzx eax,byte ptr [offset _null]{}
+        @@_BiLinearCol4:
           imul eax,edx
-          movzx ebp,byte ptr [offset _null]{}@@_BiLinearCol3:
+          movzx ebp,byte ptr [offset _null]{}
+        @@_BiLinearCol3:
           xor edx,$FF
           imul ebp,edx
           add eax,ebp
 
-          movzx edx,byte ptr [offset _Null]{}@@TexY:
+          movzx edx,byte ptr [offset _Null]{}
+        @@TexY:
           imul eax,edx
           xor edx,$FF
           imul ebx,edx
           add eax,ebx
           shr eax,16
 
-          mov byte ptr [offset _Null],al{}@@Dest:
+          mov byte ptr [offset _Null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@_BiLinearCol1  }
@@ -4958,30 +5196,37 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@_BiLinearCol2:
-          movzx edx,byte ptr [offset _null]{}@@TexX:
+          movzx eax,byte ptr [offset _null]{}
+        @@_BiLinearCol2:
+          movzx edx,byte ptr [offset _null]{}
+        @@TexX:
           imul eax,edx
-          movzx ebx,byte ptr [offset _null]{}@@_BiLinearCol1:
+          movzx ebx,byte ptr [offset _null]{}
+        @@_BiLinearCol1:
           xor edx,$FF
           imul ebx,edx
           add ebx,eax
           xor edx,$FF
 
-          movzx eax,byte ptr [offset _null]{}@@_BiLinearCol4:
+          movzx eax,byte ptr [offset _null]{}
+        @@_BiLinearCol4:
           imul eax,edx
-          movzx ebp,byte ptr [offset _null]{}@@_BiLinearCol3:
+          movzx ebp,byte ptr [offset _null]{}
+        @@_BiLinearCol3:
           xor edx,$FF
           imul ebp,edx
           add eax,ebp
 
-          movzx edx,byte ptr [offset _Null]{}@@TexY:
+          movzx edx,byte ptr [offset _Null]{}
+        @@TexY:
           imul eax,edx
           xor edx,$FF
           imul ebx,edx
           add eax,ebx
           shr eax,16
 
-          mov byte ptr [offset _Null],al{}@@Dest:
+          mov byte ptr [offset _Null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@_BiLinearCol1  }
@@ -5059,11 +5304,16 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov eax,dword ptr [offset _null]{}@@TexX:
-      mov edx,dword ptr [offset _null]{}@@TexY:
-      sub eax,dword ptr [offset _null]{}@@iTexX:
-      mov dword ptr [offset _null],edx{}@@AxisY:
-      mov dword ptr [offset _null],eax{}@@AxisX:
+      mov eax,dword ptr [offset _null]{}
+    @@TexX:
+      mov edx,dword ptr [offset _null]{}
+    @@TexY:
+      sub eax,dword ptr [offset _null]{}
+    @@iTexX:
+      mov dword ptr [offset _null],edx{}
+    @@AxisY:
+      mov dword ptr [offset _null],eax{}
+    @@AxisX:
     @@EndCode:
       {$I DXRender.inc}
       {  @@TexX  }
@@ -5101,7 +5351,8 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov dword ptr [offset _null],eax{}@@BumpTempCol:
+      mov dword ptr [offset _null],eax{}
+    @@BumpTempCol:
     @@EndCode:
       {$I DXRender.inc}
       {  @@BumpTempCol  }
@@ -5114,8 +5365,10 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov edx,dword ptr [offset _null]{}@@iAxisX:
-      add dword ptr [offset _null],edx{}@@AxisX:
+      mov edx,dword ptr [offset _null]{}
+    @@iAxisX:
+      add dword ptr [offset _null],edx{}
+    @@AxisX:
     @@EndCode:
       {$I DXRender.inc}
       {  @@iAxisX  }
@@ -5136,10 +5389,13 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      sub eax,dword ptr [offset _null]{}@@BumpTempCol:
+      sub eax,dword ptr [offset _null]{}
+    @@BumpTempCol:
       sal eax,16
-      add eax,dword ptr [offset _null]{}@@TexX:
-      mov dword ptr [offset _null],eax{}@@AxisX:
+      add eax,dword ptr [offset _null]{}
+    @@TexX:
+      mov dword ptr [offset _null],eax{}
+    @@AxisX:
     @@EndCode:
       {$I DXRender.inc}
       {  @@BumpTempCol  }
@@ -5165,11 +5421,16 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov eax,dword ptr [offset _null]{}@@TexX:
-      mov edx,dword ptr [offset _null]{}@@TexY:
-      sub edx,dword ptr [offset _null]{}@@iTexY:
-      mov dword ptr [offset _null],eax{}@@AxisX:
-      mov dword ptr [offset _null],edx{}@@AxisY:
+      mov eax,dword ptr [offset _null]{}
+    @@TexX:
+      mov edx,dword ptr [offset _null]{}
+    @@TexY:
+      sub edx,dword ptr [offset _null]{}
+    @@iTexY:
+      mov dword ptr [offset _null],eax{}
+    @@AxisX:
+      mov dword ptr [offset _null],edx{}
+    @@AxisY:
     @@EndCode:
       {$I DXRender.inc}
       {  @@TexX  }
@@ -5207,7 +5468,8 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov dword ptr [offset _null],eax{}@@BumpTempCol:
+      mov dword ptr [offset _null],eax{}
+    @@BumpTempCol:
     @@EndCode:
       {$I DXRender.inc}
       {  @@BumpTempCol  }
@@ -5220,9 +5482,11 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      mov edx,dword ptr [offset _null]{}@@iAxisY:
+      mov edx,dword ptr [offset _null]{}
+    @@iAxisY:
       sal edx,1
-      sub dword ptr [offset _null],edx{}@@AxisY:
+      sub dword ptr [offset _null],edx{}
+    @@AxisY:
     @@EndCode:
       {$I DXRender.inc}
       {  @@iAxisY  }
@@ -5243,10 +5507,13 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      sub eax,dword ptr [offset _null]{}@@BumpTempCol:
+      sub eax,dword ptr [offset _null]{}
+    @@BumpTempCol:
       sal eax,16
-      add eax,dword ptr [offset _null]{}@@TexY:
-      mov dword ptr [offset _null],eax{}@@AxisY:
+      add eax,dword ptr [offset _null]{}
+    @@TexY:
+      mov dword ptr [offset _null],eax{}
+    @@AxisY:
     @@EndCode:
       {$I DXRender.inc}
       {  @@BumpTempCol  }
@@ -5292,7 +5559,8 @@ var
     asm
       jmp @@EndCode
     @@StartCode:
-      inc dword ptr [offset _null]{}@@AxisX:
+      inc dword ptr [offset _null]{}
+    @@AxisX:
     @@EndCode:
       {$I DXRender.inc}
       {  @@AxisX  }
@@ -5355,12 +5623,18 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov eax,dword ptr [offset _null]{}@@nColor11:
-            mov edx,dword ptr [offset _null]{}@@nColor12:
-            add eax,dword ptr [offset _null]{}@@iColor1:
-            add edx,dword ptr [offset _null]{}@@iColor2:
-            mov dword ptr [offset _null],eax{}@@nColor21:
-            mov dword ptr [offset _null],edx{}@@nColor22:
+            mov eax,dword ptr [offset _null]{}
+          @@nColor11:
+            mov edx,dword ptr [offset _null]{}
+          @@nColor12:
+            add eax,dword ptr [offset _null]{}
+          @@iColor1:
+            add edx,dword ptr [offset _null]{}
+          @@iColor2:
+            mov dword ptr [offset _null],eax{}
+          @@nColor21:
+            mov dword ptr [offset _null],edx{}
+          @@nColor22:
           @@EndCode:
             {$I DXRender.inc}
 
@@ -5460,7 +5734,8 @@ var
             asm
               jmp @@EndCode
             @@StartCode:
-              add dword ptr [offset _Null],$11111111{}@@nTexX:
+              add dword ptr [offset _Null],$11111111{}
+            @@nTexX:
             @@EndCode:
               {$I DXRender.inc}
               {  @@nTexX  }
@@ -5481,7 +5756,8 @@ var
             asm
               jmp @@EndCode
             @@StartCode:
-              add dword ptr [offset _Null],$11111111{}@@nTexY:
+              add dword ptr [offset _Null],$11111111{}
+            @@nTexY:
             @@EndCode:
               {$I DXRender.inc}
               {  @@nTexY  }
@@ -5502,10 +5778,14 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov eax,dword ptr [offset _Null]{}@@iTexX:
-            mov edx,dword ptr [offset _Null]{}@@iTexY:
-            add dword ptr [offset _Null],eax{}@@nTexX:
-            add dword ptr [offset _Null],edx{}@@nTexY:
+            mov eax,dword ptr [offset _Null]{}
+          @@iTexX:
+            mov edx,dword ptr [offset _Null]{}
+          @@iTexY:
+            add dword ptr [offset _Null],eax{}
+          @@nTexX:
+            add dword ptr [offset _Null],edx{}
+          @@nTexY:
           @@EndCode:
             {$I DXRender.inc}
             {  @@iTexX  }
@@ -5551,10 +5831,14 @@ var
       jmp @@EndCode
     @@StartCode:
       // 64 bit addition
-      mov eax,dword ptr [offset _null]{}@@iRHW:
-      mov edx,dword ptr [offset _null]{}@@iRHW2:
-      add dword ptr [offset _null],eax{}@@nRHW:
-      adc dword ptr [offset _null],edx{}@@nRHW2:
+      mov eax,dword ptr [offset _null]{}
+    @@iRHW:
+      mov edx,dword ptr [offset _null]{}
+    @@iRHW2:
+      add dword ptr [offset _null],eax{}
+    @@nRHW:
+      adc dword ptr [offset _null],edx{}
+    @@nRHW2:
     @@EndCode:
       {$I DXRender.inc}
       {  @@nRHW  }
@@ -5592,10 +5876,13 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx eax,byte ptr [offset _null]{}@@Col1:
-        movzx edx,byte ptr [offset _null]{}@@Col2:
+        movzx eax,byte ptr [offset _null]{}
+      @@Col1:
+        movzx edx,byte ptr [offset _null]{}
+      @@Col2:
         mov al,byte ptr [offset _AddTable + eax + edx]
-        mov byte ptr [offset _null],al{}@@Dest:
+        mov byte ptr [offset _null],al{}
+      @@Dest:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Col1  }
@@ -5623,9 +5910,12 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx eax,byte ptr [offset _null]{}@@Col1:
-        mov al,byte ptr [$11111111 + eax]{}@@Col2:
-        mov byte ptr [offset _null],al{}@@Dest:
+        movzx eax,byte ptr [offset _null]{}
+      @@Col1:
+        mov al,byte ptr [$11111111 + eax]{}
+      @@Col2:
+        mov byte ptr [offset _null],al{}
+      @@Dest:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Col1  }
@@ -5655,11 +5945,14 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx eax,byte ptr [offset _null]{}@@Col1:
-        movzx edx,byte ptr [offset _null]{}@@Col2:
+        movzx eax,byte ptr [offset _null]{}
+      @@Col1:
+        movzx edx,byte ptr [offset _null]{}
+      @@Col2:
         sub eax,edx
         mov al,byte ptr [offset _SubTable + 255 + eax]
-        mov byte ptr [offset _null],al{}@@Dest:
+        mov byte ptr [offset _null],al{}
+      @@Dest:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Col1  }
@@ -5687,11 +5980,14 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        mov eax,$11111111{}@@Col1:
-        movzx edx,byte ptr [offset _null]{}@@Col2:
+        mov eax,$11111111{}
+      @@Col1:
+        movzx edx,byte ptr [offset _null]{}
+      @@Col2:
         sub eax,edx
         mov al,byte ptr [offset _SubTable + 255 + eax]
-        mov byte ptr [offset _null],al{}@@Dest:
+        mov byte ptr [offset _null],al{}
+      @@Dest:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Col1  }
@@ -5719,9 +6015,12 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx eax,byte ptr [offset _null]{}@@Col1:
-        mov al,byte ptr [$11111111 + eax]{}@@Col2:
-        mov byte ptr [offset _null],al{}@@Dest:
+        movzx eax,byte ptr [offset _null]{}
+      @@Col1:
+        mov al,byte ptr [$11111111 + eax]{}
+      @@Col2:
+        mov byte ptr [offset _null],al{}
+      @@Dest:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Col1  }
@@ -5751,8 +6050,10 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        mov dword ptr [offset _null],0{}@@Dest:
-        mov dword ptr [offset _null],0{}@@Dest2:
+        mov dword ptr [offset _null],0{}
+      @@Dest:
+        mov dword ptr [offset _null],0{}
+      @@Dest2:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Dest  }
@@ -5807,8 +6108,10 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov dword ptr [offset _null],$11111111{}@@Dest:
-            mov dword ptr [offset _null],$11111111{}@@Dest2:
+            mov dword ptr [offset _null],$11111111{}
+          @@Dest:
+            mov dword ptr [offset _null],$11111111{}
+          @@Dest2:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Dest  }
@@ -5841,10 +6144,14 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov eax,dword ptr [offset _null]{}@@Col:
-            mov edx,dword ptr [offset _null]{}@@Col2:
-            mov dword ptr [offset _null],eax{}@@Dest:
-            mov dword ptr [offset _null],edx{}@@Dest2:
+            mov eax,dword ptr [offset _null]{}
+          @@Col:
+            mov edx,dword ptr [offset _null]{}
+          @@Col2:
+            mov dword ptr [offset _null],eax{}
+          @@Dest:
+            mov dword ptr [offset _null],edx{}
+          @@Dest2:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col  }
@@ -6083,7 +6390,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx ebx,byte ptr [offset _null]{}@@Col1:
+        movzx ebx,byte ptr [offset _null]{}
+      @@Col1:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Col1  }
@@ -6098,11 +6406,13 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov eax,dword ptr [offset _null]{}@@Col1:
+          mov eax,dword ptr [offset _null]{}
+        @@Col1:
           shr eax,8
           and eax,$00FF00FF
           imul eax,ebx
-          mov dword ptr [offset _null],eax{}@@Dest:
+          mov dword ptr [offset _null],eax{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6125,9 +6435,11 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
             imul eax,ebx
-            mov byte ptr [offset _null],ah{}@@Dest:
+            mov byte ptr [offset _null],ah{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6149,9 +6461,11 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
             imul eax,ebx
-            mov byte ptr [offset _null],ah{}@@Dest:
+            mov byte ptr [offset _null],ah{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6174,11 +6488,13 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov eax,dword ptr [offset _null]{}@@Col1:
+          mov eax,dword ptr [offset _null]{}
+        @@Col1:
           shr eax,8
           and eax,$00FF00FF
           imul eax,ebx
-          mov dword ptr [offset _null],eax{}@@Dest:
+          mov dword ptr [offset _null],eax{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6201,9 +6517,11 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
             imul eax,ebx
-            mov byte ptr [offset _null],ah{}@@Dest:
+            mov byte ptr [offset _null],ah{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6225,9 +6543,11 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
             imul eax,ebx
-            mov byte ptr [offset _null],ah{}@@Dest:
+            mov byte ptr [offset _null],ah{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6252,7 +6572,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx ebx,byte ptr [offset _null]{}@@Col1:
+        movzx ebx,byte ptr [offset _null]{}
+      @@Col1:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Col1  }
@@ -6267,12 +6588,15 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@Col1:
-          movzx edx,byte ptr [offset _null]{}@@Col2:
+          movzx eax,byte ptr [offset _null]{}
+        @@Col1:
+          movzx edx,byte ptr [offset _null]{}
+        @@Col2:
           imul eax,ebx
           shr eax,8
           mov al,byte ptr [offset _AddTable + eax + edx]
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6300,12 +6624,15 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@Col1:
-          movzx edx,byte ptr [offset _null]{}@@Col2:
+          movzx eax,byte ptr [offset _null]{}
+        @@Col1:
+          movzx edx,byte ptr [offset _null]{}
+        @@Col2:
           imul eax,ebx
           shr eax,8
           mov al,byte ptr [offset _AddTable + eax + edx]
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6333,12 +6660,15 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@Col1:
-          movzx edx,byte ptr [offset _null]{}@@Col2:
+          movzx eax,byte ptr [offset _null]{}
+        @@Col1:
+          movzx edx,byte ptr [offset _null]{}
+        @@Col2:
           imul eax,ebx
           shr eax,8
           mov al,byte ptr [offset _AddTable + eax + edx]
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6366,12 +6696,15 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@Col1:
-          movzx edx,byte ptr [offset _null]{}@@Col2:
+          movzx eax,byte ptr [offset _null]{}
+        @@Col1:
+          movzx edx,byte ptr [offset _null]{}
+        @@Col2:
           imul eax,ebx
           shr eax,8
           mov al,byte ptr [offset _AddTable + eax + edx]
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6401,7 +6734,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx ebx,byte ptr [offset _null]{}@@Col1:
+        movzx ebx,byte ptr [offset _null]{}
+      @@Col1:
       @@EndCode:
         {$I DXRender.inc}
         {  @@Col1  }
@@ -6416,13 +6750,16 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@Col1:
-          movzx edx,byte ptr [offset _null]{}@@Col2:
+          movzx eax,byte ptr [offset _null]{}
+        @@Col1:
+          movzx edx,byte ptr [offset _null]{}
+        @@Col2:
           imul eax,ebx
           shr eax,8
           sub edx,eax
           mov al,byte ptr [offset _SubTable + 255 + edx]
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6450,13 +6787,16 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@Col1:
-          movzx edx,byte ptr [offset _null]{}@@Col2:
+          movzx eax,byte ptr [offset _null]{}
+        @@Col1:
+          movzx edx,byte ptr [offset _null]{}
+        @@Col2:
           imul eax,ebx
           shr eax,8
           sub edx,eax
           mov al,byte ptr [offset _SubTable + 255 + edx]
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6484,13 +6824,16 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@Col1:
-          movzx edx,byte ptr [offset _null]{}@@Col2:
+          movzx eax,byte ptr [offset _null]{}
+        @@Col1:
+          movzx edx,byte ptr [offset _null]{}
+        @@Col2:
           imul eax,ebx
           shr eax,8
           sub edx,eax
           mov al,byte ptr [offset _SubTable + 255 + edx]
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6518,13 +6861,16 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          movzx eax,byte ptr [offset _null]{}@@Col1:
-          movzx edx,byte ptr [offset _null]{}@@Col2:
+          movzx eax,byte ptr [offset _null]{}
+        @@Col1:
+          movzx edx,byte ptr [offset _null]{}
+        @@Col2:
           imul eax,ebx
           shr eax,8
           sub edx,eax
           mov al,byte ptr [offset _SubTable + 255 + edx]
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6554,7 +6900,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx ebx,byte ptr [offset _null]{}@@Col1:
+        movzx ebx,byte ptr [offset _null]{}
+      @@Col1:
         mov ebp,ebx
         xor ebp,$FF
       @@EndCode:
@@ -6571,8 +6918,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov eax,dword ptr [offset _null]{}@@Col1:
-          mov edx,dword ptr [offset _null]{}@@Col2:
+          mov eax,dword ptr [offset _null]{}
+        @@Col1:
+          mov edx,dword ptr [offset _null]{}
+        @@Col2:
           shr eax,8
           shr edx,8
           and eax,$00FF00FF
@@ -6580,7 +6929,8 @@ var
           imul eax,ebx
           imul edx,ebp
           add eax,edx
-          mov dword ptr [offset _null],eax{}@@Dest:
+          mov dword ptr [offset _null],eax{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6609,13 +6959,16 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
-            movzx edx,byte ptr [offset _null]{}@@Col2:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
+            movzx edx,byte ptr [offset _null]{}
+          @@Col2:
             sub eax,edx
             imul eax,ebx
             shr eax,8
             add eax,edx
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6643,13 +6996,16 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
-            movzx edx,byte ptr [offset _null]{}@@Col2:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
+            movzx edx,byte ptr [offset _null]{}
+          @@Col2:
             sub eax,edx
             imul eax,ebx
             shr eax,8
             add eax,edx
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6678,8 +7034,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov eax,dword ptr [offset _null]{}@@Col1:
-          mov edx,dword ptr [offset _null]{}@@Col2:
+          mov eax,dword ptr [offset _null]{}
+        @@Col1:
+          mov edx,dword ptr [offset _null]{}
+        @@Col2:
           shr eax,8
           shr edx,8
           and eax,$00FF00FF
@@ -6687,7 +7045,8 @@ var
           imul eax,ebx
           imul edx,ebp
           add eax,edx
-          mov dword ptr [offset _null],eax{}@@Dest:
+          mov dword ptr [offset _null],eax{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6716,13 +7075,16 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
-            movzx edx,byte ptr [offset _null]{}@@Col2:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
+            movzx edx,byte ptr [offset _null]{}
+          @@Col2:
             sub eax,edx
             imul eax,ebx
             shr eax,8
             add eax,edx
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6750,13 +7112,16 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
-            movzx edx,byte ptr [offset _null]{}@@Col2:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
+            movzx edx,byte ptr [offset _null]{}
+          @@Col2:
             sub eax,edx
             imul eax,ebx
             shr eax,8
             add eax,edx
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6787,7 +7152,8 @@ var
       asm
         jmp @@EndCode
       @@StartCode:
-        movzx ebp,byte ptr [offset _null]{}@@Col1A:
+        movzx ebp,byte ptr [offset _null]{}
+      @@Col1A:
         mov ebx,ebp
         xor ebx,$FF
       @@EndCode:
@@ -6804,8 +7170,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov eax,dword ptr [offset _null]{}@@Col1:
-          mov edx,dword ptr [offset _null]{}@@Col2:
+          mov eax,dword ptr [offset _null]{}
+        @@Col1:
+          mov edx,dword ptr [offset _null]{}
+        @@Col2:
           shr eax,8
           shr edx,8
           and eax,$00FF00FF
@@ -6813,7 +7181,8 @@ var
           imul eax,ebx
           imul edx,ebp
           add eax,edx
-          mov dword ptr [offset _null],eax{}@@Dest:
+          mov dword ptr [offset _null],eax{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6842,13 +7211,16 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
-            movzx edx,byte ptr [offset _null]{}@@Col2:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
+            movzx edx,byte ptr [offset _null]{}
+          @@Col2:
             sub eax,edx
             imul eax,ebx
             shr eax,8
             add eax,edx
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6876,13 +7248,16 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
-            movzx edx,byte ptr [offset _null]{}@@Col2:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
+            movzx edx,byte ptr [offset _null]{}
+          @@Col2:
             sub eax,edx
             imul eax,ebx
             shr eax,8
             add eax,edx
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6911,8 +7286,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov eax,dword ptr [offset _null]{}@@Col1:
-          mov edx,dword ptr [offset _null]{}@@Col2:
+          mov eax,dword ptr [offset _null]{}
+        @@Col1:
+          mov edx,dword ptr [offset _null]{}
+        @@Col2:
           shr eax,8
           shr edx,8
           and eax,$00FF00FF
@@ -6920,7 +7297,8 @@ var
           imul eax,ebx
           imul edx,ebp
           add eax,edx
-          mov dword ptr [offset _null],eax{}@@Dest:
+          mov dword ptr [offset _null],eax{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -6949,13 +7327,16 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
-            movzx edx,byte ptr [offset _null]{}@@Col2:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
+            movzx edx,byte ptr [offset _null]{}
+          @@Col2:
             sub eax,edx
             imul eax,ebx
             shr eax,8
             add eax,edx
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -6983,13 +7364,16 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            movzx eax,byte ptr [offset _null]{}@@Col1:
-            movzx edx,byte ptr [offset _null]{}@@Col2:
+            movzx eax,byte ptr [offset _null]{}
+          @@Col1:
+            movzx edx,byte ptr [offset _null]{}
+          @@Col2:
             sub eax,edx
             imul eax,ebx
             shr eax,8
             add eax,edx
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -7049,10 +7433,14 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov eax,dword ptr [offset _null]{}@@Col1:
-            mov edx,dword ptr [offset _null]{}@@Col1_2:
-            mov dword ptr [offset _null],eax{}@@Dest:
-            mov dword ptr [offset _null],edx{}@@Dest2:
+            mov eax,dword ptr [offset _null]{}
+          @@Col1:
+            mov edx,dword ptr [offset _null]{}
+          @@Col1_2:
+            mov dword ptr [offset _null],eax{}
+          @@Dest:
+            mov dword ptr [offset _null],edx{}
+          @@Dest2:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -7087,8 +7475,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov al,byte ptr [offset _null]{}@@Col2:
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov al,byte ptr [offset _null]{}
+        @@Col2:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col2  }
@@ -7114,9 +7504,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov al,byte ptr [offset offset _null]{}@@Col1:
-          mul byte ptr [offset offset _null]   {}@@Col2:
-          mov byte ptr [offset offset _null],ah{}@@Dest:
+          mov al,byte ptr [offset _null]{}
+        @@Col1:
+          mul byte ptr [offset _null]   {}
+        @@Col2:
+          mov byte ptr [offset _null],ah{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -7144,9 +7537,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov al,byte ptr [offset offset _null]{}@@Col1:
-          mul byte ptr [offset offset _null]   {}@@Col2:
-          mov byte ptr [offset offset _null],ah{}@@Dest:
+          mov al,byte ptr [offset _null]{}
+        @@Col1:
+          mul byte ptr [offset _null]   {}
+        @@Col2:
+          mov byte ptr [offset _null],ah{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -7174,9 +7570,12 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov al,byte ptr [offset offset _null]{}@@Col1:
-          mul byte ptr [offset offset _null]   {}@@Col2:
-          mov byte ptr [offset offset _null],ah{}@@Dest:
+          mov al,byte ptr [offset _null]{}
+        @@Col1:
+          mul byte ptr [offset _null]   {}
+        @@Col2:
+          mov byte ptr [offset _null],ah{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -7204,8 +7603,10 @@ var
         asm
           jmp @@EndCode
         @@StartCode:
-          mov al,byte ptr [offset _null]{}@@Col1:
-          mov byte ptr [offset _null],al{}@@Dest:
+          mov al,byte ptr [offset _null]{}
+        @@Col1:
+          mov byte ptr [offset _null],al{}
+        @@Dest:
         @@EndCode:
           {$I DXRender.inc}
           {  @@Col1  }
@@ -7254,7 +7655,7 @@ var
           mov dword ptr [ecx+edx],eax
 
           {  @@Dest  }
-          mov eax,offset Dest
+          mov eax,offset @@Dest
           mov edx,offset @@Dest-4
           sub edx,offset @@StartCode
           mov dword ptr [ecx+edx],eax
@@ -7267,9 +7668,12 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov al,byte ptr [offset offset _null]{}@@Col1:
-            mul byte ptr [offset offset _null]   {}@@Col2:
-            mov byte ptr [offset offset _null],ah{}@@Dest:
+            mov al,byte ptr [offset _null]{}
+          @@Col1:
+            mul byte ptr [offset _null]   {}
+          @@Col2:
+            mov byte ptr [offset _null],ah{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -7297,9 +7701,12 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov al,byte ptr [offset offset _null]{}@@Col1:
-            mul byte ptr [offset offset _null]   {}@@Col2:
-            mov byte ptr [offset offset _null],ah{}@@Dest:
+            mov al,byte ptr [offset _null]{}
+          @@Col1:
+            mul byte ptr [offset _null]   {}
+          @@Col2:
+            mov byte ptr [offset _null],ah{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -7327,9 +7734,12 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov al,byte ptr [offset offset _null]{}@@Col1:
-            mul byte ptr [offset offset _null]   {}@@Col2:
-            mov byte ptr [offset offset _null],ah{}@@Dest:
+            mov al,byte ptr [offset _null]{}
+          @@Col1:
+            mul byte ptr [offset _null]   {}
+          @@Col2:
+            mov byte ptr [offset _null],ah{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -7357,9 +7767,12 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov al,byte ptr [offset offset _null]{}@@Col1:
-            mul byte ptr [offset offset _null]   {}@@Col2:
-            mov byte ptr [offset offset _null],ah{}@@Dest:
+            mov al,byte ptr [offset _null]{}
+          @@Col1:
+            mul byte ptr [offset _null]   {}
+          @@Col2:
+            mov byte ptr [offset _null],ah{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col1  }
@@ -7427,8 +7840,10 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov al,byte ptr [offset _null]{}@@Col2:
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov al,byte ptr [offset _null]{}
+          @@Col2:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col2  }
@@ -7498,8 +7913,10 @@ var
           asm
             jmp @@EndCode
           @@StartCode:
-            mov al,byte ptr [offset _null]{}@@Col2:
-            mov byte ptr [offset _null],al{}@@Dest:
+            mov al,byte ptr [offset _null]{}
+          @@Col2:
+            mov byte ptr [offset _null],al{}
+          @@Dest:
           @@EndCode:
             {$I DXRender.inc}
             {  @@Col2  }
