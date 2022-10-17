@@ -1029,13 +1029,13 @@ begin
 
     UseDirectSound := False;
 
-    ArtPath := INI.ReadString( 'Settings', 'ArtPath', DefaultPath );
+    ArtPath := INI.ReadString( 'Settings', 'ArtPath', DefaultPath + 'ArtLib\Resources\' );
     if ArtPath[ Length( ArtPath ) ] <> '\' then
       ArtPath := ArtPath + '\';
     Log.Log( 'ArtPath=' + ArtPath );
     Log.flush;
 
-    TilePath := INI.ReadString( 'Settings', 'TilePath', DefaultPath );
+    TilePath := INI.ReadString( 'Settings', 'TilePath', DefaultPath + 'ArtLib\Tiles\' );
     if TilePath[ Length( TilePath ) ] <> '\' then
       TilePath := TilePath + '\';
     Log.Log( 'TilePath=' + TilePath );
@@ -1047,7 +1047,7 @@ begin
     Log.Log( 'SoundPath=' + SoundPath );
     Log.flush;
 
-    InterfacePath := INI.ReadString( 'Settings', 'Interface', DefaultPath );
+    InterfacePath := INI.ReadString( 'Settings', 'Interface', DefaultPath + 'Interface\' );
     if InterfacePath[ Length( InterfacePath ) ] <> '\' then
       InterfacePath := InterfacePath + '\';
     Log.Log( 'InterfacePath=' + InterfacePath );
@@ -1059,7 +1059,7 @@ begin
     Log.Log( 'CachePath=' + CachePath );
     Log.flush;
 
-    MapPath := INI.ReadString( 'Settings', 'MapPath', '' );
+    MapPath := INI.ReadString( 'Settings', 'MapPath', DefaultPath + 'Maps\' );
     if MapPath <> '' then
     begin
       if MapPath[ Length( MapPath ) ] <> '\' then
