@@ -4020,10 +4020,10 @@ begin
 
                     Character.Approach( Character.Track );
                     Walking := True;
-                    if TContainer( Character.Track ).Closed then
+                    {if TContainer( Character.Track ).Closed then
                       Character.Say( 'Lets see whats in this', clWhite )
                     else
-                      Character.Say( 'Now who left this open?', clWhite );
+                      Character.Say( 'Now who left this open?', clWhite );}
 
                     Delay := Random( 140 ) + 100;
                     List.Free;
