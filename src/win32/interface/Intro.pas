@@ -70,10 +70,8 @@ uses
 {$IFDEF DirectX}
   DirectX,
   DXUtil,
-  DXEffects,
 {$ENDIF}
   Windows,
-  Messages,
   SysUtils,
   Classes,
   Graphics,
@@ -81,9 +79,6 @@ uses
   Forms,
   Dialogs,
   ExtCtrls,
-  Character,
-  Resource,
-  StdCtrls,
   GameText,
   Display,
   Anigrp30,

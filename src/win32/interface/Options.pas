@@ -73,7 +73,6 @@ uses
   DXEffects,
 {$ENDIF}
   Windows,
-  Messages,
   SysUtils,
   Classes,
   Graphics,
@@ -82,7 +81,6 @@ uses
   Dialogs,
   ExtCtrls,
   CharacterAI,
-  StdCtrls,
   GameText,
   Display,
   Anigrp30,

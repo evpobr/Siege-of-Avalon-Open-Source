@@ -72,9 +72,6 @@ uses
   DXUtil,
   DXEffects,
 {$ENDIF}
-  Windows,
-  MMSystem,
-  Messages,
   SysUtils,
   Classes,
   Graphics,
@@ -82,11 +79,8 @@ uses
   Forms,
   Dialogs,
   ExtCtrls,
-  Character,
-  StdCtrls,
   Display,
   Anigrp30,
-  math,
   Music,
   Resource,
   LogFile;

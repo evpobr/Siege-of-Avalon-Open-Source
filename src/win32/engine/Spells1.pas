@@ -69,7 +69,6 @@ uses
   Windows,
   SysUtils,
   Engine,
-  MiscAI,
   CharacterAI,
   Resource,
   Spells,
@@ -181,9 +180,6 @@ type
 function LoadSpells1 : boolean;
 
 implementation
-
-uses
-  BasicHumanoidAI;
 
 function LoadSpells1 : boolean;
 begin

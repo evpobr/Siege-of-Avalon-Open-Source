@@ -68,14 +68,10 @@ interface
 
 uses
   Classes,
-  Windows,
   SysUtils,
   Graphics,
   Anigrp30,
   AniDec30,
-  IniFiles,
-  DFX,
-  digifx,
   Resource,
   CharacterAI,
   ItemDatabase,

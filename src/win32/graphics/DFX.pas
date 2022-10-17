@@ -68,7 +68,6 @@ interface
 
 uses
   Windows,
-  Messages,
   SysUtils,
   Classes,
   Graphics,
@@ -77,11 +76,9 @@ uses
   Dialogs,
   digifx,
 {$IFDEF DirectX}
-  DirectX,
   DXUtil,
   Anigrp30,
 {$ENDIF}
-  StdCtrls,
   ExtCtrls,
   LogFile;
 

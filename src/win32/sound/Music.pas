@@ -67,12 +67,9 @@ unit Music;
 interface
 
 uses
-  Windows,
-  Messages,
   SysUtils,
   Classes,
   Controls,
-  StdCtrls,
   ExtCtrls,
   forms,
   Midi,

@@ -67,8 +67,7 @@ interface
 uses
   Windows,
   SysUtils,
-  Classes,
-  LogFile;
+  Classes;
 
 type
   TSavBlocks = ( sbMap, sbMapKnown, sbCharacter, sbItem, sbTravel, sbJournal, scAbstract, scSoundPlayer, scPathCorner, scTrigger, scSpriteObject,

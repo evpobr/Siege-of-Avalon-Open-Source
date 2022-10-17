@@ -109,9 +109,6 @@ function IsSerialValid( SerialNumber : AnsiString ) : Boolean;
 
 implementation
 
-uses
-  String32;
-
 var
   VolSerial : DWORD;
   VolSerialString : AnsiString;

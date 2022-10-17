@@ -65,12 +65,9 @@ unit Midi;
 interface
 
 uses
-  Windows,
-  Messages,
   SysUtils,
   Classes,
   Controls,
-  StdCtrls,
   ExtCtrls,
   forms,
   LogFile;

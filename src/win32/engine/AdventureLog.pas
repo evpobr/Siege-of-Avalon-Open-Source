@@ -67,8 +67,6 @@ unit AdventureLog;
 interface
 
 uses
-  Windows,
-  Messages,
   SysUtils,
   Classes,
   Graphics,

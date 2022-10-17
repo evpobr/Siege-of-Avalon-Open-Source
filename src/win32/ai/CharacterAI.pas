@@ -76,7 +76,6 @@ uses
 {$IFDEF DirectX}
   DirectX,
   DXUtil,
-  DXEffects,
 {$ENDIF}
   digifx,
   DFX,
@@ -1106,9 +1105,7 @@ implementation
 
 uses
   Engine,
-  ItemDatabase,
   Titles,
-  Loader,
   Display,
   Parts,
   Sound,
@@ -1119,7 +1116,6 @@ uses
   WolfAI,
   MiscAI,
   AniDemo,
-  Effects,
   Spells;
 
 //fix for bad character names

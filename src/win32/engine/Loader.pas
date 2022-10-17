@@ -72,17 +72,11 @@ uses
   Graphics,
   SysUtils,
   Forms,
-  INIFiles,
   Anigrp30,
   AniDec30,
-{$IFDEF DirectX}
-  DirectX,
-  DXUtil,
-{$ENDIF}
   CharacterAI,
   Resource,
   Engine,
-  ItemDatabase,
   LogFile;
 
 type

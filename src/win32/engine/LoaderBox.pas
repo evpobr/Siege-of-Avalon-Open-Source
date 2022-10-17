@@ -76,7 +76,6 @@ uses
   Classes,
   Graphics,
   SysUtils,
-  Engine,
   Anigrp30,
   LogFile;
 

@@ -70,8 +70,6 @@ uses
   Classes,
   SysUtils,
   CharacterAI,
-  Resource,
-  Engine,
   Anigrp30,
   LogFile;
 

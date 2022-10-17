@@ -69,15 +69,12 @@ interface
 uses
   Classes,
   Anigrp30,
-  AniDec30,
   ExtCtrls,
-  Windows,
   Math,
   SysUtils,
   INIFiles,
   DirectX,
   LogFile,
-  MMSystem,
   Graphics,
   Resource,
   Titles,
@@ -157,7 +154,6 @@ uses
   Parts,
   Effects,
   Display,
-  Spells1,
   Music;
 
 type

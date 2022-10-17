@@ -93,7 +93,6 @@ uses
   Dialogs,
   Resource,
   Graphics,
-  Math,
   strFunctions;
 
 type

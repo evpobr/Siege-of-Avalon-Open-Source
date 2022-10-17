@@ -66,10 +66,8 @@ interface
 
 uses
   Classes,
-  Windows,
   SysUtils,
   DFX,
-  digifx,
   CharacterAI,
   ItemDatabase,
   LogFile;

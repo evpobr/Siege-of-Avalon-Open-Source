@@ -70,9 +70,7 @@ uses
 {$IFDEF DirectX}
   DirectX,
   DXUtil,
-  DXEffects,
 {$ENDIF}
-  Windows,
   Forms,
   Classes,
   Graphics,

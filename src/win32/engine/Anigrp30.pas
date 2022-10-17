@@ -81,7 +81,6 @@ uses
 {$IFDEF DirectX}
   DirectX,
   DXUtil,
-  DXEffects,
 {$ENDIF}
   LogFile;
 
@@ -684,9 +683,6 @@ var
   Debug : Longint;
 
 implementation
-
-uses
-  Character;
 
 function MakeScript( const Frames : array of Word ) : ScriptInfo;
 var
