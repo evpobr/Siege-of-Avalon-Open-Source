@@ -80,16 +80,16 @@ uses
   LogFile;
 
 type
-  TAboutAdventureLogProperty = class( TPropertyEditor )
+  {TAboutAdventureLogProperty = class( TPropertyEditor )
   public
     procedure Edit; override;
     function GetAttributes : TPropertyAttributes; override;
     function GetValue : string; override;
-  end;
+  end;}
 
   TAdventureLog = class( TObject )
   private
-    FAbout : TAboutAdventureLogProperty;
+    { FAbout : TAboutAdventureLogProperty; }
     FAdventureLog : TStrings;
     FLogDateList : TStringList;
     FLogDirectory : string;
@@ -104,28 +104,28 @@ type
     procedure DeleteLogEntry( LogFile : string );
     procedure Clear;
   published
-    property About : TAboutAdventureLogProperty read FAbout write FAbout;
+    { property About : TAboutAdventureLogProperty read FAbout write FAbout; }
     property LogFileList : TStringList read FLogDateList write FLogDateList;
     property LogDirectory : string read FLogDirectory write FLogDirectory;
   end;
 
 implementation
 
-procedure TAboutAdventureLogProperty.Edit;
+{ procedure TAboutAdventureLogProperty.Edit;
 begin
   Application.MessageBox( 'Adventure Log for The Game Master' + #39 + 's Table. (c) 1999 Random Features, Inc.',
     'TAdventureLog component version 1.0', MB_OK + MB_ICONINFORMATION );
-end;
+end; }
 
-function TAboutAdventureLogProperty.GetAttributes : TPropertyAttributes;
+{ function TAboutAdventureLogProperty.GetAttributes : TPropertyAttributes;
 begin
   Result := [ paMultiSelect, paDialog, paReadOnly ];
-end;
+end; }
 
-function TAboutAdventureLogProperty.GetValue : string;
+{ function TAboutAdventureLogProperty.GetValue : string;
 begin
   Result := '(about)';
-end;
+end; }
 
 
 constructor TAdventureLog.Create;

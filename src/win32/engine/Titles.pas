@@ -70,7 +70,7 @@ uses
   SysUtils,
   DFX,
   digifx,
-  Character,
+  CharacterAI,
   ItemDatabase,
   LogFile;
 

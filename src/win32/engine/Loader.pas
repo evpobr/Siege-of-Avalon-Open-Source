@@ -79,7 +79,7 @@ uses
   DirectX,
   DXUtil,
 {$ENDIF}
-  Character,
+  CharacterAI,
   Resource,
   Engine,
   ItemDatabase,
@@ -111,6 +111,7 @@ function GetlevelCode( const Filename : string ) : int64;
 implementation
 
 uses
+  Variants,
   Parts,
   AniDemo;
 
@@ -567,7 +568,7 @@ var
               CombatAI := 'BasicFight';
               PartyAI := 'Companion';
               Resource := TResource( Figures.objects[ i ] );
-              MouseRect := Rect( CenterX - Radius, 24, CenterX + Radius, CenterY );
+              MouseRect := Rect.Create( CenterX - Radius, 24, CenterX + Radius, CenterY );
               LoadProperties( Attributes );
               UseDefaultEquipment := true;
 //            Init;

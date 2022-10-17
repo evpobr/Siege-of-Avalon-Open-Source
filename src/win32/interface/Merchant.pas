@@ -81,7 +81,7 @@ uses
   Forms,
   Dialogs,
   ExtCtrls,
-  Character,
+  CharacterAI,
   Resource,
   StdCtrls,
   GameText,

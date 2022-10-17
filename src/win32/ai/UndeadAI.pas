@@ -69,7 +69,7 @@ interface
 uses
   Classes,
   SysUtils,
-  Character,
+  CharacterAI,
   Resource,
   Engine,
   Anigrp30,

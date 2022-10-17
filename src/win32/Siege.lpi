@@ -65,10 +65,6 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="ai\Character.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="ai\AI1.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
@@ -275,6 +271,10 @@
       </Unit>
       <Unit>
         <Filename Value="engine\MMTimer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ai\CharacterAI.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

@@ -86,7 +86,7 @@ interface
 uses
   Classes,
   SysUtils,
-  Character,
+  CharacterAI,
   Engine,
   Anigrp30,
   LogFile,

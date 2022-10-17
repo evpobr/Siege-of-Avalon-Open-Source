@@ -77,7 +77,7 @@ uses
   Classes,
   Graphics,
   SysUtils,
-  Character,
+  CharacterAI,
   GameText,
   Anigrp30,
   Engine,

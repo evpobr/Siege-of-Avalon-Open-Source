@@ -90,7 +90,7 @@ uses
   Classes,
   SysUtils,
   Graphics,
-  Character,
+  CharacterAI,
   Anigrp30,
   strFunctions,
   Resource,

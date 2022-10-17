@@ -70,7 +70,7 @@ uses
   SysUtils,
   Engine,
   MiscAI,
-  Character,
+  CharacterAI,
   Resource,
   Spells,
   LogFile;

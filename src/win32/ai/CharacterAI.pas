@@ -1,4 +1,4 @@
-unit Character;
+unit CharacterAI;
 
 {$MODE Delphi}
 
@@ -2341,7 +2341,7 @@ begin
 
     FDead := Value;
     if FDead then
-      MouseRect := Rect( 24, CenterY - Radius div 2, Width - 24, CenterY + Radius div 4 );
+      MouseRect := Rect.Create( 24, CenterY - Radius div 2, Width - 24, CenterY + Radius div 4 );
 
     if Spawned then
       AddEffect( TBodyRotEffect.create );
@@ -5629,7 +5629,7 @@ begin
     Y := View.Top + PosY - Height;
     BltFx.dwSize := SizeOf( BltFx );
     BltFx.dwFillColor := 0;
-    lpDDSBack.Blt( rect( X, Y, X + Width, Y + Height ), nil, rect( 0, 0, 0, 0 ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
+    lpDDSBack.Blt( rect.Create( X, Y, X + Width, Y + Height ), nil, rect.Create( 0, 0, 0, 0 ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
     if ( BaseHitPoints > 0 ) and ( HitPoints > 0 ) then
     begin
       Ratio := ( HitPoints - Wounds ) / HitPoints;
@@ -5643,7 +5643,7 @@ begin
       BltFx.dwFillColor := trunc( $18 * ( 1 - Ratio ) ) shl 10 + trunc( $F * Ratio ) shl 5
     else
       BltFx.dwFillColor := trunc( $18 * ( 1 - Ratio ) ) shl 11 + trunc( $1F * Ratio ) shl 5;
-    lpDDSBack.Blt( rect( X + 1, Y + 1, X + BarWidth, Y + Height - 1 ), nil, rect( 0, 0, 0, 0 ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
+    lpDDSBack.Blt( rect.Create( X + 1, Y + 1, X + BarWidth, Y + Height - 1 ), nil, rect.Create( 0, 0, 0, 0 ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
   end;
 end;
 
@@ -6796,9 +6796,9 @@ begin
   TCharacter( NewObject ).AutoTransparent := false;
   TCharacter( NewObject ).Visible := Visible;
   if TResource( Resource ).FrameHeight >= 100 then
-    TCharacter( NewObject ).MouseRect := Rect( CenterX - Radius, 20, CenterX + Radius, TResource( Resource ).FrameHeight - 20 )
+    TCharacter( NewObject ).MouseRect := Rect.Create( CenterX - Radius, 20, CenterX + Radius, TResource( Resource ).FrameHeight - 20 )
   else
-    TCharacter( NewObject ).MouseRect := Rect( CenterX - Radius, 0, CenterX + Radius, TResource( Resource ).FrameHeight );
+    TCharacter( NewObject ).MouseRect := Rect.Create( CenterX - Radius, 0, CenterX + Radius, TResource( Resource ).FrameHeight );
   TCharacter( NewObject ).GroupName := GroupName;
   TCharacter( NewObject ).SpecialEffect := SpecialEffect;
   TCharacter( NewObject ).MaskHeight := MaskHeight;
@@ -9710,7 +9710,7 @@ begin
 
     inherited;
 
-    Self.MouseRect := Rect( CenterX - Radius, CenterY - Radius, CenterX + Radius, CenterY + Radius );
+    Self.MouseRect := Rect.Create( CenterX - Radius, CenterY - Radius, CenterX + Radius, CenterY + Radius );
 
     if assigned( resource ) and ( Resource is TLayerResource ) then
       Frame := TLayerResource( Resource ).ItemFrame + 1;
@@ -11052,9 +11052,9 @@ begin
         Self.UseLighting := UseLighting;
         Self.Highlightable := Highlightable;
         if FrameHeight >= 100 then
-          Self.MouseRect := Rect( CenterX - Radius, 20, CenterX + Radius, FrameHeight - 20 )
+          Self.MouseRect := Rect.Create( CenterX - Radius, 20, CenterX + Radius, FrameHeight - 20 )
         else
-          Self.MouseRect := Rect( CenterX - Radius, 0, CenterX + Radius, FrameHeight );
+          Self.MouseRect := Rect.Create( CenterX - Radius, 0, CenterX + Radius, FrameHeight );
       end;
     end;
 
@@ -11136,7 +11136,7 @@ begin
     end;
     MsgDuration := 100;
     BM := TBitmap.Create;
-    R := Rect( 0, 0, Width * 2, 0 );
+    R := Rect.Create( 0, 0, Width * 2, 0 );
     DrawText( BM.Canvas.Handle, PChar( Msg ), -1, R, DT_CALCRECT or DT_CENTER or DT_NOCLIP or DT_NOPREFIX or DT_WORDBREAK );
     MsgWidth := R.Right;
     MsgHeight := R.Bottom;
@@ -11182,7 +11182,7 @@ begin
     begin
       X0 := PosX + CenterX - MsgWidth div 2;
 {$IFDEF DirectX}
-      lpDDSBack.BltFast( X0, PosY - MsgHeight, MsgImage, Rect( 0, 0, MsgWidth, MsgHeight ), DDBLTFAST_SRCCOLORKEY or DDBLTFAST_WAIT );
+      lpDDSBack.BltFast( X0, PosY - MsgHeight, MsgImage, Rect.Create( 0, 0, MsgWidth, MsgHeight ), DDBLTFAST_SRCCOLORKEY or DDBLTFAST_WAIT );
 {$ENDIF}
 {$IFNDEF DirectX}
       SelectObject( Game.TempDC, MsgMask );
@@ -11921,7 +11921,7 @@ begin
   end;
 end;
 
-procedure TTrigger.Execute;
+function TTrigger.Execute : Boolean;
 var
   event : string;
 const

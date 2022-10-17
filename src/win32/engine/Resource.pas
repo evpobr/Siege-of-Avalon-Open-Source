@@ -303,7 +303,7 @@ function GetFileDate( cFile : string ) : TDateTime;
 implementation
 
 uses
-  Character,
+  CharacterAI,
   Engine,
   Parts;
 
@@ -1007,11 +1007,11 @@ begin
   if PlotShadows and DrawShadow then
   begin
     if not ComplexShadow then
-      DrawSub( lpDDSBack, Rect( DstX1 + Figure.CenterX - 37, DstY1 + Figure.CenterY - 20, DstX1 + Figure.CenterX + 37, DstY1 + Figure.CenterY + 20 ),
-        Rect( 0, 0, 74, 40 ), ShadowImage, True, 255 )
+      DrawSub( lpDDSBack, Rect.Create( DstX1 + Figure.CenterX - 37, DstY1 + Figure.CenterY - 20, DstX1 + Figure.CenterX + 37, DstY1 + Figure.CenterY + 20 ),
+        Rect.Create( 0, 0, 74, 40 ), ShadowImage, True, 255 )
     else if ( BaseLightType = 3 ) then
-      DrawSub( lpDDSBack, Rect( DstX1 + Figure.CenterX - 37, DstY1 + Figure.CenterY - 20, DstX1 + Figure.CenterX + 37, DstY1 + Figure.CenterY + 20 ),
-        Rect( 0, 0, 74, 40 ), ShadowImage, True, 128 );
+      DrawSub( lpDDSBack, Rect.Create( DstX1 + Figure.CenterX - 37, DstY1 + Figure.CenterY - 20, DstX1 + Figure.CenterX + 37, DstY1 + Figure.CenterY + 20 ),
+        Rect.Create( 0, 0, 74, 40 ), ShadowImage, True, 128 );
   end;
 
   ddsd.dwSize := SizeOf( ddsd );
@@ -1397,11 +1397,11 @@ begin
   if PlotShadows and DrawShadow then
   begin
     if not ComplexShadow then
-      DrawSub( lpDDSBack, Rect( DstX1 + Figure.CenterX - 37, DstY1 + Figure.CenterY - 20, DstX1 + Figure.CenterX + 37, DstY1 + Figure.CenterY + 20 ),
-        Rect( 0, 0, 74, 40 ), ShadowImage, True, 255 )
+      DrawSub( lpDDSBack, Rect.Create( DstX1 + Figure.CenterX - 37, DstY1 + Figure.CenterY - 20, DstX1 + Figure.CenterX + 37, DstY1 + Figure.CenterY + 20 ),
+        Rect.Create( 0, 0, 74, 40 ), ShadowImage, True, 255 )
     else if ( BaseLightType = 3 ) then
-      DrawSub( lpDDSBack, Rect( DstX1 + Figure.CenterX - 37, DstY1 + Figure.CenterY - 20, DstX1 + Figure.CenterX + 37, DstY1 + Figure.CenterY + 20 ),
-        Rect( 0, 0, 74, 40 ), ShadowImage, True, 128 );
+      DrawSub( lpDDSBack, Rect.Create( DstX1 + Figure.CenterX - 37, DstY1 + Figure.CenterY - 20, DstX1 + Figure.CenterX + 37, DstY1 + Figure.CenterY + 20 ),
+        Rect.Create( 0, 0, 74, 40 ), ShadowImage, True, 128 );
   end;
 
   ddsd.dwSize := SizeOf( ddsd );
@@ -2328,7 +2328,7 @@ begin
         end;
       end;
       if ImageIndex > 0 then
-        BM.Blt( Rect( 0, 0, W, FrameHeight ), nil, Rect( 0, 0, W, FrameHeight ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
+        BM.Blt( Rect.Create( 0, 0, W, FrameHeight ), nil, Rect.Create( 0, 0, W, FrameHeight ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
       GetImage1( ImageIndex, BM, W );
       inc( Index );
       pItem := Map.DefineItem( Zone, Index, BM, DepthAnchors, CollisionMask, LineOfSightMask, LightPoints, Slope, False, AutoTransparent, Vertical );
@@ -2473,7 +2473,7 @@ begin
         end;
       end;
       if ImageIndex > 0 then
-        BM.Blt( Rect( 0, 0, W, FrameHeight ), nil, Rect( 0, 0, W, FrameHeight ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
+        BM.Blt( Rect.Create( 0, 0, W, FrameHeight ), nil, Rect.Create( 0, 0, W, FrameHeight ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
       GetImage1( ImageIndex, BM, W );
       inc( Index );
       Map.DefineItem( Zone, Index, BM, DepthAnchors, CollisionMask, LineOfSightMask, LightPoints, Slope, True, AutoTransparent, Vertical );
@@ -2698,7 +2698,7 @@ begin
     for i := 0 to FrameCount - 1 do
     begin
       if i > 0 then
-        TileBM.Blt( Rect( 0, 0, W, FrameHeight ), nil, Rect( 0, 0, W, FrameHeight ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
+        TileBM.Blt( Rect.Create( 0, 0, W, FrameHeight ), nil, Rect.Create( 0, 0, W, FrameHeight ), DDBLT_COLORFILL + DDBLT_WAIT, BltFx );
       GetImage1( i, TileBM, W );
       Map.DefineTile( Zone, Index + i, TileBM );
     end;

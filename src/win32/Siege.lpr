@@ -75,7 +75,6 @@ uses
   AdventureLog in 'engine\AdventureLog.pas',
   DFX in 'graphics\DFX.pas',
   GameText in 'engine\GameText.pas',
-  Character in 'ai\Character.pas',
   AI1 in 'ai\AI1.pas',
   UndeadAI in 'ai\UndeadAI.pas',
   BasicHumanoidAI in 'AI\BasicHumanoidAI.pas',

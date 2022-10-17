@@ -88,7 +88,7 @@ uses
 {$ENDIF}
   Anigrp30,
   AniDec30,
-  Character,
+  CharacterAI,
   Effects,
   Loader,
   Resource,
@@ -304,15 +304,15 @@ type
     procedure BeginObjInventory( Character : TCharacter; OtherObj : TSpriteObject );
     procedure BeginStatistics( Character : TCharacter );
     procedure BeginMap( Character : TCharacter );
-    procedure BeginTitles( Character : TCharacter );
+    procedure BeginTitles( aCharacter : CharacterAI.TCharacter );
     procedure BeginNPC( Character : TCharacter );
     procedure BeginJournal;
-    procedure BeginOptions( Character : TCharacter );
+    procedure BeginOptions( aCharacter : CharacterAI.TCharacter );
     procedure BeginHelp;
     procedure BeginQuestLog;
     procedure BeginAdvLog;
     procedure BeginDeath;
-    procedure BeginRoster( Character : TCharacter );
+    procedure BeginRoster( aCharacter : CharacterAI.TCharacter );
     procedure BeginTransit( const NewFile, SceneName, StartingPoint, Transition, TargetList : string );
     procedure AddToParty( Figure : TAniFigure );
     procedure RemoveFromParty( Figure : TAniFigure );
@@ -2669,7 +2669,7 @@ begin
   end;
 end;
 
-procedure TfrmMain.BeginTitles( Character : TCharacter );
+procedure TfrmMain.BeginTitles( aCharacter : CharacterAI.TCharacter );
 const
   FailName : string = 'Main.BeginTitles';
 begin
@@ -2679,9 +2679,9 @@ begin
 {$ENDIF}
   try
 
-    if Assigned( Character ) and not Character.InterfaceLocked then
+    if Assigned( aCharacter ) and not aCharacter.InterfaceLocked then
     begin
-      DlgTitles.Character := Character;
+      DlgTitles.Character := aCharacter;
       OpenDialog( DlgTitles, CloseAllDialogs );
     end;
 
@@ -2739,7 +2739,7 @@ begin
   end;
 end;
 
-procedure TfrmMain.BeginOptions( Character : TCharacter );
+procedure TfrmMain.BeginOptions( aCharacter : CharacterAI.TCharacter );
 const
   FailName : string = 'Main.BeginOptions';
 begin
@@ -2749,9 +2749,9 @@ begin
 {$ENDIF}
   try
 
-    if Assigned( Character ) then
+    if Assigned( aCharacter ) then
     begin
-      DlgOptions.Character := Character;
+      DlgOptions.Character := aCharacter;
       DlgOptions.SoundVolume := MasterSoundVolume;
       DlgOptions.MusicVolume := MasterMusicVolume;
       DlgOptions.PlotShadows := PlotShadows;
@@ -6670,7 +6670,7 @@ begin
   end;
 end;
 
-procedure TfrmMain.BeginRoster( Character : TCharacter );
+procedure TfrmMain.BeginRoster( aCharacter : CharacterAI.TCharacter );
 const
   FailName : string = 'Main.BeginRoster';
 begin
@@ -6680,7 +6680,7 @@ begin
 {$ENDIF}
   try
 
-    DlgRoster.Character := Character;
+    DlgRoster.Character := aCharacter;
     DlgRoster.OnDraw := DrawRosterGuy;
     OpenDialog( DlgRoster, CloseRosterDialog );
   except

@@ -81,7 +81,7 @@ uses
   Forms,
   Dialogs,
   ExtCtrls,
-  Character,
+  CharacterAI,
   StdCtrls,
   GameText,
   Display,
@@ -112,7 +112,7 @@ type
     procedure MouseMove( Sender : TAniview;
       Shift : TShiftState; X, Y : Integer; GridX, GridY : integer ); override;
   public
-    Character : TCharacter;
+    Character : CharacterAI.TCharacter;
     constructor Create;
     destructor Destroy; override;
     procedure Init; override;

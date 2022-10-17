@@ -153,7 +153,7 @@ implementation
 
 uses
   AniDemo,
-  Character,
+  CharacterAI,
   Parts,
   Effects,
   Display,

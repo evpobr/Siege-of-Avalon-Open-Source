@@ -79,7 +79,7 @@ uses
   Forms,
   Dialogs,
   ExtCtrls,
-  Character,
+  CharacterAI,
   StdCtrls,
   Display,
   Anigrp30,

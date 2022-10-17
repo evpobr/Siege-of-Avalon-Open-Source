@@ -77,7 +77,7 @@ uses
   DFX,
   digifx,
   Resource,
-  Character,
+  CharacterAI,
   ItemDatabase,
   Engine,
   LogFile;

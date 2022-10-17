@@ -67,7 +67,7 @@ interface
 uses
   SysUtils,
   Resource,
-  Character,
+  CharacterAI,
   Anigrp30,
   digifx,
   Spells,
