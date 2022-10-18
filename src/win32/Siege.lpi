@@ -22,10 +22,10 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <SearchPaths>
-            <IncludeFiles Value="ai;engine;graphics;interface;sound;$(ProjOutDir)"/>
+            <IncludeFiles Value="$(ProjOutDir);ai;engine;graphics;interface;sound"/>
             <Libraries Value="ai"/>
             <OtherUnitFiles Value="ai;engine;graphics;interface;sound"/>
-            <UnitOutputDirectory Value="..\..\..\game"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
             <ObjectPath Value="ai"/>
           </SearchPaths>
           <Parsing>
@@ -66,10 +66,10 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <SearchPaths>
-            <IncludeFiles Value="ai;engine;graphics;interface;sound"/>
+            <IncludeFiles Value="$(ProjOutDir);ai;engine;graphics;interface;sound"/>
             <Libraries Value="ai"/>
             <OtherUnitFiles Value="ai;engine;graphics;interface;sound"/>
-            <UnitOutputDirectory Value="..\..\..\game"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
             <ObjectPath Value="ai"/>
           </SearchPaths>
           <Parsing>
@@ -365,10 +365,10 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <SearchPaths>
-      <IncludeFiles Value="ai;engine;graphics;interface;sound"/>
+      <IncludeFiles Value="$(ProjOutDir);ai;engine;graphics;interface;sound"/>
       <Libraries Value="ai"/>
       <OtherUnitFiles Value="ai;engine;graphics;interface;sound"/>
-      <UnitOutputDirectory Value="..\..\..\game"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       <ObjectPath Value="ai"/>
     </SearchPaths>
     <Parsing>
