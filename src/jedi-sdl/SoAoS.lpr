@@ -1,4 +1,5 @@
 program SoAoS;
+
 {******************************************************************************}
 {
   $Id: SoAoS.dpr,v 1.13 2006/10/15 17:00:51 savage Exp $
@@ -9,7 +10,7 @@ program SoAoS;
 {               -------------------------------------                          }
 {                                                                              }
 { Portions created by Digital Tome L.P. Texas USA are                          }
-{ Copyright ©1999-2000 Digital Tome L.P. Texas USA                             }
+{ Copyright Â©1999-2000 Digital Tome L.P. Texas USA                             }
 { All Rights Reserved.                                                         }
 {                                                                              }
 { Portions created by Team SOAOS are                                           }
