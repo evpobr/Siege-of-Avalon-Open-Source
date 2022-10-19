@@ -167,62 +167,6 @@
         <Filename Value="sdl\xplatformutils.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
-      <Unit>
-        <Filename Value="..\win32\engine\backup\AdventureLog.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\win32\engine\backup\SaveFile.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="engine\backup\backup\globals.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="engine\backup\backup\SiegeTypes.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="interface\backup\backup\Externalizer.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="interface\backup\backup\GameIntro.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="interface\backup\backup\NewGame.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="interface\backup\backup\SiegeInterfaces.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="sdl\backup\backup\registryuserpreferences.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="sdl\backup\backup\sdlaudiomixer.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="sdl\backup\backup\sdlgameinterface.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="sdl\backup\backup\sdltruetypefont.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="sdl\backup\backup\sdlwindow.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="sdl\backup\backup\xplatformutils.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -230,7 +174,7 @@
     <PathDelim Value="\"/>
     <SearchPaths>
       <IncludeFiles Value="sdl;interface;engine;ai;sdl\backup\backup;interface\backup\backup;engine\backup\backup;..\win32\engine\backup"/>
-      <OtherUnitFiles Value="sdl;interface;engine;ai;sdl\backup\backup;interface\backup\backup;engine\backup\backup;..\win32\engine\backup"/>
+      <OtherUnitFiles Value="sdl;interface;engine;ai"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>
